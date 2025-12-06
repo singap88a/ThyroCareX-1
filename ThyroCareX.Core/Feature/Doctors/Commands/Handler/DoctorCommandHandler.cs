@@ -69,8 +69,7 @@ namespace ThyroCareX.Core.Feature.Doctors.Commands.Handler
             //call srevice that make Edit 
             var result = await _doctorService.EditAsync(mappedDoctor);
             //return response
-            if (result == "Success") return Success($"Updated Seccessfully {mappedDoctor.DoctorID}");
-            else return BadRequest<string>();
+            return Success(result);
         }
 
         public async Task<Response<string>> Handle(DeleteDoctorCommand request, CancellationToken cancellationToken)
@@ -85,8 +84,7 @@ namespace ThyroCareX.Core.Feature.Doctors.Commands.Handler
             //call service that make delete
             var result = await _doctorService.DeleteAsync(doctor);
             //return response
-            if(result == "Success") return Deleted<string>($"Doctor {doctor.FullName} deleted successfully");
-            else return BadRequest<string>();
+            return Success(result);
 
         }
 
@@ -95,8 +93,7 @@ namespace ThyroCareX.Core.Feature.Doctors.Commands.Handler
             var doctorMapped = _mapper.Map<Doctor>(request);
             var result = await _doctorService.AddAsync(doctorMapped);
             // return response
-            if (result == "Success") return Created("");
-            else return BadRequest<string>();
+            return Success(result);
         }
 
 

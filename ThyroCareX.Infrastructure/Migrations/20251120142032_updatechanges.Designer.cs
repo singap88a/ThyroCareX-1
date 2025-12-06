@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ThyroCareX.Infrastructure.Context;
 
@@ -11,9 +12,11 @@ using ThyroCareX.Infrastructure.Context;
 namespace ThyroCareX.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251120142032_updatechanges")]
+    partial class updatechanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -63,7 +66,7 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Property<string>("Specialization")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SubscriptionPlanID")
+                    b.Property<int>("SubscriptionPlanID")
                         .HasColumnType("int");
 
                     b.Property<int?>("gender")
@@ -92,7 +95,7 @@ namespace ThyroCareX.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DoctorID")
+                    b.Property<int>("DoctorID")
                         .HasColumnType("int");
 
                     b.Property<int?>("DoctorID1")
@@ -102,7 +105,7 @@ namespace ThyroCareX.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("PatientID")
+                    b.Property<int>("PatientID")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("RecordDate")
@@ -134,7 +137,7 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DoctorID")
+                    b.Property<int>("DoctorID")
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
@@ -238,7 +241,9 @@ namespace ThyroCareX.Infrastructure.Migrations
                 {
                     b.HasOne("ThyroCareX.Data.Models.SubscriptionPlan", "SubscriptionPlan")
                         .WithMany("Doctors")
-                        .HasForeignKey("SubscriptionPlanID");
+                        .HasForeignKey("SubscriptionPlanID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("SubscriptionPlan");
                 });
@@ -248,7 +253,8 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.HasOne("ThyroCareX.Data.Models.Doctor", "Doctor")
                         .WithMany()
                         .HasForeignKey("DoctorID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("ThyroCareX.Data.Models.Doctor", null)
                         .WithMany("MedicalRecords")
@@ -257,7 +263,8 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.HasOne("ThyroCareX.Data.Models.Patient", "Patient")
                         .WithMany("MedicalRecords")
                         .HasForeignKey("PatientID")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Doctor");
 
@@ -268,7 +275,9 @@ namespace ThyroCareX.Infrastructure.Migrations
                 {
                     b.HasOne("ThyroCareX.Data.Models.Doctor", "Doctor")
                         .WithMany("Patients")
-                        .HasForeignKey("DoctorID");
+                        .HasForeignKey("DoctorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Doctor");
                 });

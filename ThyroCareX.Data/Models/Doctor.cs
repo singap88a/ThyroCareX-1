@@ -17,16 +17,16 @@ namespace ThyroCareX.Data.Models
         public int DoctorID { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
-        public string Specialization { get; set; }
-        public Gender gender { get; set; }
-        public int NationalID { get; set; }
-        public int PhoneNumber { get; set; }
+        public string? Password { get; set; }
+        public string? Specialization { get; set; }
+        public Gender? gender { get; set; }
+        public int? NationalID { get; set; }
+        public int? PhoneNumber { get; set; }
         public string Address { get; set; }
-        public string Hospital { get; set; }
-        public string ImagePath { get; set; }
+        public string? Hospital { get; set; }
+        public string? ImagePath { get; set; }
         public DateTime RegistrationAt { get; set; }
-        public int SubscriptionPlanID { get; set; }
+        public int? SubscriptionPlanID { get; set; }
         [ForeignKey("SubscriptionPlanID")]
         public SubscriptionPlan SubscriptionPlan { get; set; }
 

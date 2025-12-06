@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,8 @@ namespace ThyroCareX.Core.Mapping.DoctorMapp
             // Add your mapping configurations here in the future
             CreateMap<AddDoctorCommand, Doctor>()
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => src.FullName))
-                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email));
+                .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest=>dest.Address, opt=> opt.MapFrom(src=>src.Address) );
 
 
         }

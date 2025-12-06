@@ -11,6 +11,7 @@ namespace ThyroCareX.Service
             // Here you can register your service dependencies
             
              services.AddScoped<IDoctorService, DoctorService>();
+             services.AddScoped<IPatientService, PatientService>();
             services.AddScoped<IImageService>(sp =>
                 new ImageService(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "doctors")));
 

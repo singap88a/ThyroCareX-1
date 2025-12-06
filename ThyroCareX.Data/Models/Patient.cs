@@ -20,9 +20,9 @@ namespace ThyroCareX.Data.Models
         public int PhoneNumber { get; set; }
         public string Address { get; set; }
         public DateTime RegistrationAt { get; set; } = DateTime.UtcNow;
-        public int DoctorID { get; set; }
+        public int? DoctorID { get; set; }
         [ForeignKey("DoctorID")]
-        public Doctor Doctor { get; set; }
+        public Doctor? Doctor { get; set; }
         public virtual ICollection<MedicalRecord> MedicalRecords { get; set; }
 
     }
