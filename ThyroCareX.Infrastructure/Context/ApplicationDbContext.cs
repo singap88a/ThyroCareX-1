@@ -47,6 +47,13 @@ namespace ThyroCareX.Infrastructure.Context
                 .WithMany()
                 .HasForeignKey(m => m.DoctorID)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            // إعداد علاقة 1-1 بين Doctor و User مع Cascade Delete
+           modelBuilder.Entity<Doctor>()
+            .HasOne(d => d.User)
+            .WithOne() // كل User ممكن يكون له Doctor واحد
+            .HasForeignKey<Doctor>(d => d.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

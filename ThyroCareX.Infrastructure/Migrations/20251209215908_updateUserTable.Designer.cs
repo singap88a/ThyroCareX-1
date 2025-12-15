@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ThyroCareX.Infrastructure.Context;
 
@@ -11,9 +12,11 @@ using ThyroCareX.Infrastructure.Context;
 namespace ThyroCareX.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251209215908_updateUserTable")]
+    partial class updateUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,8 +190,8 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("PhoneNumber")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("RegistrationAt")
                         .HasColumnType("datetime2");
@@ -199,18 +202,12 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Property<int?>("SubscriptionPlanID")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("gender")
                         .HasColumnType("int");
 
                     b.HasKey("DoctorID");
 
                     b.HasIndex("SubscriptionPlanID");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
 
                     b.ToTable("Doctors");
                 });
@@ -524,15 +521,7 @@ namespace ThyroCareX.Infrastructure.Migrations
                         .WithMany("Doctors")
                         .HasForeignKey("SubscriptionPlanID");
 
-                    b.HasOne("ThyroCareX.Data.Models.Identity.User", "User")
-                        .WithOne()
-                        .HasForeignKey("ThyroCareX.Data.Models.Doctor", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("SubscriptionPlan");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ThyroCareX.Data.Models.MedicalRecord", b =>

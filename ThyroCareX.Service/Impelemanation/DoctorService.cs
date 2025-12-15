@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,8 +81,26 @@ namespace ThyroCareX.Service.Impelemanation
             return "Doctor Added Successfully";
         }
 
+        public async Task<bool> IsEmailTakenAsync(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false; 
 
-            #endregion
-
+            return await _doctorRepository
+                .GetTableNoTracking() 
+                .AnyAsync(d => d.Email == email);
         }
+
+        public async Task<bool> IsPhoneTakenAsync(string phoneNumber)
+        {
+            if (string.IsNullOrWhiteSpace(phoneNumber))
+                return false; 
+            return await _doctorRepository
+                .GetTableNoTracking() 
+                .AnyAsync(d => d.PhoneNumber == phoneNumber);
+        }
+
+        #endregion
+
+    }
 }

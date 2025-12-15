@@ -12,6 +12,7 @@ namespace ThyroCareX.Service
             
              services.AddScoped<IDoctorService, DoctorService>();
              services.AddScoped<IPatientService, PatientService>();
+            services.AddScoped<IAuthentcationService, AuthentcationService>();
             services.AddScoped<IImageService>(sp =>
                 new ImageService(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "doctors")));
 

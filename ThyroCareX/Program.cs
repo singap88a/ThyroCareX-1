@@ -15,26 +15,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 #region Dependancy Injection 
 builder.Services.AddInfrastructureDependencies()
                 .AddServiceDependencies()
-                .AddCoreDependencies();
+                .AddCoreDependencies()
+                .AddServiceRegisteration(builder.Configuration); ;
 #endregion
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-//builder.Services.AddSwaggerGen();
-builder.Services.AddSwaggerGen(options =>
-{
-    options.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "Catalog API",
-        Version = "v1",
-        Description = "Catalog API for E-Commerce Application",
-        Contact = new OpenApiContact()
-        {
-            Name = "Ahmed Ehab",
-            Email = "ahmedehabahmed31@gmail.com"
-        }
-    });
-});
+
+
 
 var app = builder.Build();
 
@@ -48,6 +36,8 @@ app.UseSwaggerUI(c =>
 
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using ThyroCareX.Data.Enums;
+using ThyroCareX.Data.Models.Identity;
 
 namespace ThyroCareX.Data.Models
 {
@@ -21,11 +22,16 @@ namespace ThyroCareX.Data.Models
         public string? Specialization { get; set; }
         public Gender? gender { get; set; }
         public int? NationalID { get; set; }
-        public int? PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
         public string Address { get; set; }
         public string? Hospital { get; set; }
         public string? ImagePath { get; set; }
         public DateTime RegistrationAt { get; set; }
+        public int UserId { get; set; }
+
+        // علاقة الـ Navigation property
+        [ForeignKey(nameof(UserId))]
+        public User User { get; set; }
         public int? SubscriptionPlanID { get; set; }
         [ForeignKey("SubscriptionPlanID")]
         public SubscriptionPlan SubscriptionPlan { get; set; }

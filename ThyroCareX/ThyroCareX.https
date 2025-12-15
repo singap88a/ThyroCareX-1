@@ -1,4 +1,4 @@
-@ThyroCareX_HostAddress = http://localhost:5153
+@ThyroCareX_HostAddress = https://localhost:5153
 
 GET {{ThyroCareX_HostAddress}}/weatherforecast/
 Accept: application/json

@@ -21,4 +21,10 @@
     <ProjectReference Include="..\ThyroCareX.Service\ThyroCareX.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Feature\AplicationUser\Command\Handler\" />
+    <Folder Include="Feature\AplicationUser\Command\Validation\" />
+    <Folder Include="Feature\AplicationUser\Queries\" />
+  </ItemGroup>
+
 </Project>

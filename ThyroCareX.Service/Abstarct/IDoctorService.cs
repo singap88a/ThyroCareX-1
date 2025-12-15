@@ -14,6 +14,8 @@ namespace ThyroCareX.Service.Abstarct
         Task <string> EditAsync(Doctor doctor);
         Task<Doctor> GetDoctorByIdAsync(int id);
         Task<bool> IsEmailExistExcludeSelf(string email, int id);
+        Task<bool> IsEmailTakenAsync(string email);
+        Task<bool> IsPhoneTakenAsync(string phoneNumber);
         Task<string> DeleteAsync(Doctor doctor);
         Task<string> AddAsync(Doctor doctor);
     }
