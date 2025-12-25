@@ -47,6 +47,7 @@ namespace ThyroCareX.Core.Feature.Authentication.Command.Validation
                 .Matches(@"[\!\@\#\$\%\^\&\*]").WithMessage("Password must contain at least one special character (!@#$%^&*).");
 
             RuleFor(x => x.ConfirmPassword)
+                .NotEmpty().WithMessage("Confirm password is required.")
                 .Equal(x => x.Password).WithMessage("Passwords do not match.");
 
             RuleFor(x => x.PhoneNumber)

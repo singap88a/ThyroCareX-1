@@ -92,15 +92,3 @@ namespace ThyroCareX.Core.Feature.Authentication.Command.Handler
         #endregion
     }
 }
-//if (user is null || !await _userManager.CheckPasswordAsync(user, model.Password))
-//{
-//    authModel.Message = "Email or Password is incorrect!";
-//    return authModel;
-//}
-
-////return the email not found
-//if (user == null)
-//    return BadRequest<string>("Email Not Found");
-////try to signIn
-//var signInResult = await _signInManager.CheckPasswordSignInAsync(user, request.Password, false);
-//if (!signInResult.Succeeded) return BadRequest<string>("Email Or Password Is Wrong");
