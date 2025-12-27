@@ -12,48 +12,51 @@ using ThyroCareX.Service.Abstarct;
 
 namespace ThyroCareX.Core.Feature.Patients.Command.Handler
 {
-    public class PatientCommandHandler : ResponseHandler,
-     IRequestHandler<AddPatientCommand, Response<string>>,
-     IRequestHandler<EditPatientCommand, Response<string>>,
-     IRequestHandler<DeletePatientCommand, Response<string>>
+    public class PatientCommandHandler : ResponseHandler, IRequestHandler<AddPatientCommand, Response<string>>
+                                                      , IRequestHandler<EditPatientCommand, Response<string>>
     {
+        #region Fields
         private readonly IPatientService _patientService;
         private readonly IMapper _mapper;
-
+        #endregion
+        #region Constructor
         public PatientCommandHandler(IPatientService patientService, IMapper mapper)
         {
+
             _patientService = patientService;
             _mapper = mapper;
         }
 
-        // Add
+        #endregion
+        #region Handle Functions
         public async Task<Response<string>> Handle(AddPatientCommand request, CancellationToken cancellationToken)
         {
-            var patient = _mapper.Map<Patient>(request);
-            var result = await _patientService.AddAsync(patient);
+            // Map the Requst to Patient entity
+            var PatientMapper = _mapper.Map<Patient>(request);
+            // Call the Service to Add Patient
+            var result = await _patientService.AddAsync(PatientMapper);
+            // Return Response
             return Success(result);
+
+
         }
 
-        // Edit
         public async Task<Response<string>> Handle(EditPatientCommand request, CancellationToken cancellationToken)
         {
             var patient = await _patientService.GetPatientByIdAsync(request.PatientID);
-            if (patient == null) return NotFound<string>("Patient not found");
+            if (patient == null)
+            {
+                return NotFound<string>("Patient not found");
+            }
 
-            var mapped = _mapper.Map(request, patient);
-            var result = await _patientService.EditAsync(mapped);
+            // Map the Requst to Patient entity
+            var PatientMapper = _mapper.Map<Patient>(request);
+            // Call the Service to Update Patient
+            var result = await _patientService.EditAsync(PatientMapper);
+            // Return Response
             return Success(result);
         }
 
-        // Delete
-        public async Task<Response<string>> Handle(DeletePatientCommand request, CancellationToken cancellationToken)
-        {
-            var patient = await _patientService.GetPatientByIdAsync(request.PatientID);
-            if (patient == null) return NotFound<string>("Patient not found");
-
-            var result = await _patientService.DeleteAsync(request.PatientID);
-            return Success(result);
-        }
+        #endregion
     }
-
 }

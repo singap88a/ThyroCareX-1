@@ -44,11 +44,6 @@ namespace ThyroCareX.Controllers
             return Ok(Response);
 
         }
-        [HttpDelete("DeletePatient/{id}")]
-        public async Task<IActionResult> DeletePatient([FromRoute] int id)
-        {
-            var response = await Mediator.Send(new DeletePatientCommand(id));
-            return Ok(response);
-        }
+        
     }
 }
