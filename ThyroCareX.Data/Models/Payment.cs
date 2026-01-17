@@ -11,11 +11,11 @@ namespace ThyroCareX.Data.Models
 
         public int DoctorID { get; set; }
         [ForeignKey("DoctorID")]
-        public Doctor Doctor { get; set; }
+        public Doctor Doctor { get; set; }= null!;
 
         public int SubscriptionPlanID { get; set; }
         [ForeignKey("SubscriptionPlanID")]
-        public SubscriptionPlan SubscriptionPlan { get; set; }
+        public SubscriptionPlan SubscriptionPlan { get; set; }= null!;
 
         [Column(TypeName = "decimal(10,2)")]
         public decimal Amount { get; set; }
@@ -23,9 +23,16 @@ namespace ThyroCareX.Data.Models
         public PaymentMethod PaymentMethod { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
 
-        public DateTime PaymentDate { get; set; } = DateTime.Now;
+        public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
         public DateTime? VerifiedAt { get; set; }
 
         public bool IsRefunded { get; set; } = false;
+
+        // Stripe IDs
+        public string? StripePaymentIntentId { get; set; }
+        public string? StripeInvoiceId { get; set; }
     }
 }
+
+
+

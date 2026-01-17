@@ -6,6 +6,7 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using ThyroCareX.Data.Enums;
 using ThyroCareX.Data.Models;
 using ThyroCareX.Infrastructure.Abstarct;
 using ThyroCareX.Service.Abstarct;
@@ -34,7 +35,7 @@ namespace ThyroCareX.Service.Impelemanation
         public async Task<Doctor> GetDoctorByIdWithIncludeAsync(int id)
         {
             var Doctor=await _doctorRepository.GetTableNoTracking()
-                .Include(x=>x.SubscriptionPlan).Where(x=>x.DoctorID.Equals(id)).FirstOrDefaultAsync();
+                .Include(x=>x.SubscriptionPlans).Where(x=>x.DoctorID.Equals(id)).FirstOrDefaultAsync();
 
             return Doctor;
         }
@@ -98,6 +99,26 @@ namespace ThyroCareX.Service.Impelemanation
             return await _doctorRepository
                 .GetTableNoTracking() 
                 .AnyAsync(d => d.PhoneNumber == phoneNumber);
+        }
+
+        public async Task<bool> IsPhoneExistExcludeSelf(string phoneNumber, int id)
+        {
+             if (string.IsNullOrWhiteSpace(phoneNumber)) return false;
+
+             return await _doctorRepository.GetTableNoTracking()
+                 .AnyAsync(x => x.PhoneNumber == phoneNumber && x.DoctorID != id);
+        }
+
+        public async Task<List<Doctor>> GetPendingDoctorAsync()
+        {
+           return await _doctorRepository.GetTableNoTracking()
+                                         .Where(x=>x.Status==DoctorStatus.Pending).ToListAsync();
+        }
+
+        public async Task<Doctor> GetDoctorByUserIdAsync(int userId)
+        {
+            return await _doctorRepository.GetTableNoTracking()
+                                          .FirstOrDefaultAsync(x => x.UserId == userId);
         }
 
         #endregion

@@ -13,7 +13,7 @@ namespace ThyroCareX.Core.Feature.Doctors.Queires.Result
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Specialization { get; set; }
-        public string SubscriptionPlanName { get; set; }
+        public List<string> SubscriptionPlanNames { get; set; }
         public Gender gender { get; set; }
         public int NationalID { get; set; }
         public int PhoneNumber { get; set; }

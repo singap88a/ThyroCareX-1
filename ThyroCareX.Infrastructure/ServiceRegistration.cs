@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore; 
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -9,7 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
+using System.Threading.RateLimiting;
 using System.Threading.Tasks;
 using ThyroCareX.Data.Healpers;
 using ThyroCareX.Data.Models.Identity;
@@ -56,7 +60,7 @@ namespace ThyroCareX.Infrastructure
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-           .AddJwtBearer(x =>
+           .AddJwtBearer("Bearer", x =>
            {
                x.RequireHttpsMetadata = false;
                x.SaveToken = true;
@@ -69,9 +73,31 @@ namespace ThyroCareX.Infrastructure
                    ValidAudience = jwtSettings.Audience,
                    ValidateAudience = jwtSettings.ValidateAudience,
                    ValidateLifetime = jwtSettings.ValidateLifeTime,
+                   RoleClaimType = ClaimTypes.Role 
                };
            });
 
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+            //    options.AddPolicy("DoctorOnly", policy => policy.RequireRole("Doctor"));
+            //});
+
+            // Add Stripe configuration
+            //services.Configure<StripeSettings>(configuration.GetSection("Stripe"));
+
+            services.AddRateLimiter(options =>
+            {
+                options.AddFixedWindowLimiter("FixedPolicy", opt =>
+                {
+                    opt.Window = TimeSpan.FromMinutes(1);
+                    opt.PermitLimit = 100;
+                    opt.QueueLimit = 2;
+                    opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+
+
+                });
+            });
 
             //Swagger Gn
             services.AddSwaggerGen(c =>
@@ -103,7 +129,7 @@ namespace ThyroCareX.Infrastructure
             }
            });
             });
-
+            services.AddHttpContextAccessor();
             //builder.Services.AddSwaggerGen(options =>
             //{
             //    options.SwaggerDoc("v1", new OpenApiInfo

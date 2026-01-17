@@ -11,5 +11,6 @@ namespace ThyroCareX.Infrastructure.Abstarct
    public interface IDoctorRepository :IGenericRepositoryAsync<Doctor>
     {
         Task<List<Doctor>> GetAllDoctorAsync();
+        
     }
 }

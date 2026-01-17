@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ThyroCareX.Core.Feature.Doctors.Queires.Result;
 using ThyroCareX.Data.Models;
+using ThyroCareX.Data.Models.Identity;
 
 namespace ThyroCareX.Core.Mapping.DoctorMapp
 {
@@ -14,8 +15,16 @@ namespace ThyroCareX.Core.Mapping.DoctorMapp
         public void GetDoctorListMapping()
         {
             CreateMap<Doctor,GetDoctorListResponse>()
-                        .ForMember(dest=> dest.SubscriptionPlanName, opt => opt.MapFrom(src => src.SubscriptionPlan.PlanName));
-               
+                        .ForMember(dest => dest.SubscriptionPlanNames,
+                           opt => opt.MapFrom(src => src.SubscriptionPlans.Select(sp => sp.Plan.Name).ToList()))
+                        .ForMember(dest => dest.ImagePath,
+                           opt => opt.MapFrom(src => src.ImagePath != null ? src.ImagePath : "default-doctor.png"))
+                          .ForMember(dest => dest.Specialization, opt => opt.MapFrom(src => src.Specialization))
+                         .ForMember(dest => dest.ProfileImage,
+                           opt => opt.MapFrom(src => src.ProfileImage != null ? src.ProfileImage : "default-doctor.png"));
+           
+            CreateMap<User, GetDoctorListResponse>()
+                .ForMember(dest => dest.Specialization, opt => opt.MapFrom(src => src.Specialization));
 
         }
     }

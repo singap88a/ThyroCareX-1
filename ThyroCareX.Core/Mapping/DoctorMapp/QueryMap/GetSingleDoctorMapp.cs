@@ -14,7 +14,8 @@ namespace ThyroCareX.Core.Mapping.DoctorMapp
         public void GetSinglrDoctorMapp()
         {
             CreateMap<Doctor,GetSingleDoctorResponse>()
-                  .ForMember(dest => dest.SubscriptionPlanName, opt => opt.MapFrom(src => src.SubscriptionPlan.PlanName));
+                  .ForMember(dest => dest.SubscriptionPlanNames,
+                    opt => opt.MapFrom(src => src.SubscriptionPlans.Select(sp => sp.Plan.Name).ToList())); 
         }
 
     }

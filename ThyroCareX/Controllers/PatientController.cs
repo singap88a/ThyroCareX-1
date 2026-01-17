@@ -44,5 +44,6 @@ namespace ThyroCareX.Controllers
             return Ok(Response);
 
         }
+        
     }
 }

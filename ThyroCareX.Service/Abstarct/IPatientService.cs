@@ -14,5 +14,6 @@ namespace ThyroCareX.Service.Abstarct
         Task<Patient>GetPatientByIdAsync(int id);
         Task<string> AddAsync(Patient patient);
         Task<string> EditAsync(Patient patient);
+        Task<string> DeleteAsync(Patient patient);
     }
 }

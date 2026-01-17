@@ -25,6 +25,7 @@ namespace ThyroCareX.Infrastructure.Repository
         {
             return await _doctors.ToListAsync();
         }
+       
         #endregion
     }
 }

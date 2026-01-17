@@ -13,6 +13,7 @@ namespace ThyroCareX.Core.Mapping.DoctorMapp
         {
             GetDoctorListMapping();
             GetSinglrDoctorMapp();
+            GetDoctorByIdMapp();
             AddDoctorCommandMapp();
             EditDoctorCommandMapp();
         }

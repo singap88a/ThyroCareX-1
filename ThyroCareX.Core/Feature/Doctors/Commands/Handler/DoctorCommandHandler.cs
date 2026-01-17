@@ -3,11 +3,13 @@ using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using ThyroCareX.Core.Bases;
 using ThyroCareX.Core.Feature.Doctors.Commands.Models;
 using ThyroCareX.Core.Feature.Doctors.Queires.Result;
+using ThyroCareX.Data.Enums;
 using ThyroCareX.Data.Models;
 using ThyroCareX.Service.Abstarct;
 using ThyroCareX.Service.Impelemanation;
@@ -17,20 +19,25 @@ namespace ThyroCareX.Core.Feature.Doctors.Commands.Handler
     public class DoctorCommandHandler:ResponseHandler,
                                                  IRequestHandler<EditDoctorCommand,Response<string>>,
                                                  IRequestHandler<DeleteDoctorCommand,Response<string>>,
-                                                 IRequestHandler<AddDoctorCommand,Response<string>>
+                                                 IRequestHandler<AddDoctorCommand,Response<string>>,
+                                                 IRequestHandler<ApproveDoctorCommand,Response<string>>,
+                                                 IRequestHandler<RejectDoctorCommand,Response<string>>
     {
         #region prop
         private readonly IDoctorService _doctorService;
         private readonly IMapper _mapper;
         private readonly IImageService _imageService;
+        private readonly IUserContextService _userContextService;
 
         #endregion
         #region Constructor
-        public DoctorCommandHandler(IDoctorService doctorService, IMapper mapper, IImageService imageService)
+        public DoctorCommandHandler(IDoctorService doctorService, IMapper mapper,
+            IImageService imageService, IUserContextService userContextService)
         {
             _doctorService = doctorService;
-                        _mapper = mapper;
+            _userContextService = userContextService;
             _imageService = imageService;
+                        _mapper = mapper;
 
         }
 
@@ -38,38 +45,33 @@ namespace ThyroCareX.Core.Feature.Doctors.Commands.Handler
         #region Handle Functions
         public async Task<Response<string>> Handle(EditDoctorCommand request, CancellationToken cancellationToken)
         {
-            //check if doctor exists 
-        var doctor = await _doctorService.GetDoctorByIdAsync(request.Id);
-            if(doctor == null)
+            var userIdString = _userContextService.UserId;
+
+            if (string.IsNullOrEmpty(userIdString))
+                return new Response<string>("Unauthorized");
+
+            if (!int.TryParse(userIdString, out var userId))
+                return new Response<string>("Invalid UserId");
+
+            var doctor = await _doctorService.GetDoctorByUserIdAsync(userId);
+
+            if (doctor == null)
+                return new Response<string>("Doctor not found");
+            if (request.ProfileImage != null)
             {
-                return NotFound<string>("Doctor Is Not Found");
+                var imagePath = await _imageService.UploadImageAsync(
+                    request.ProfileImage.OpenReadStream(),
+                    request.ProfileImage.FileName);
+
+                doctor.ProfileImage = imagePath;
             }
 
-            // 2️⃣ رفع الصورة الجديدة لو موجودة
-            if (!string.IsNullOrEmpty(request.ImageFile))
-            {
-                // حفظ المسار القديم
-                var oldImagePath = doctor.ImagePath;
+            //map the request to doctor entity
+            var result = _mapper.Map(request, doctor);
+            await _doctorService.EditAsync(result);
+            return Success("Doctor Updated Successfully");
 
-                // تحويل Base64 string إلى Stream
-                byte[] imageBytes = Convert.FromBase64String(request.ImageFile);
-                using var stream = new MemoryStream(imageBytes);
-
-                // رفع الصورة الجديدة عبر ImageService
-                var newImagePath = await _imageService.UploadImageAsync(stream, $"doctor_{doctor.DoctorID}.webp");
-                doctor.ImagePath = newImagePath;
-
-                // حذف الصورة القديمة لو موجودة
-                if (!string.IsNullOrEmpty(oldImagePath))
-                    _imageService.DeleteImage(oldImagePath);
-            }
-            //mapping Between request and Doctor
-
-            var mappedDoctor = _mapper.Map<Doctor>(request);
-            //call srevice that make Edit 
-            var result = await _doctorService.EditAsync(mappedDoctor);
-            //return response
-            return Success(result);
+           
         }
 
         public async Task<Response<string>> Handle(DeleteDoctorCommand request, CancellationToken cancellationToken)
@@ -94,6 +96,36 @@ namespace ThyroCareX.Core.Feature.Doctors.Commands.Handler
             var result = await _doctorService.AddAsync(doctorMapped);
             // return response
             return Success(result);
+        }
+
+        public async Task<Response<string>> Handle(ApproveDoctorCommand request, CancellationToken cancellationToken)
+        {
+            var doctor = await _doctorService.GetDoctorByIdAsync(request.Id);
+
+            if (doctor == null)
+            {
+                return NotFound<string>("Doctor Is Not Found");
+            }
+
+            doctor.Status=DoctorStatus.Approved;
+            await _doctorService.EditAsync(doctor);
+            return Success("Doctor Approved Successfully");
+
+
+        }
+
+        public async Task<Response<string>> Handle(RejectDoctorCommand request, CancellationToken cancellationToken)
+        {
+            var doctor = await _doctorService.GetDoctorByIdAsync(request.Id);
+
+            if (doctor == null)
+            {
+                return NotFound<string>("Doctor Is Not Found");
+            }
+
+            doctor.Status = DoctorStatus.Rejected;
+            await _doctorService.EditAsync(doctor);
+            return Success("Doctor Rejected Successfully");
         }
 
 

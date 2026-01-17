@@ -10,7 +10,7 @@ using ThyroCareX.Service.Abstarct;
 
 namespace ThyroCareX.Service.Impelemanation
 {
-    public class PatientService:IPatientService
+    public class PatientService : IPatientService
     {
         #region Prop
         private readonly IPatientRepository _patientRepository;
@@ -25,20 +25,20 @@ namespace ThyroCareX.Service.Impelemanation
         #region Handle Functions
         public Task<List<Patient>> GetAllPatientsIncudelWithDoctorAsync()
         {
-           var patients= _patientRepository.GetTableNoTracking().Include(p => p.Doctor).ToListAsync();
+            var patients = _patientRepository.GetTableNoTracking().Include(p => p.Doctor).ToListAsync();
             return patients;
 
         }
         public async Task<List<Patient>> GetAllPatientsByDoctorAsync(int doctorId)
         {
-           return await _patientRepository.GetTableNoTracking()
-                .Where(p => p.DoctorID == doctorId)
-                .ToListAsync();
-            
+            return await _patientRepository.GetTableNoTracking()
+                 .Where(p => p.DoctorID == doctorId)
+                 .ToListAsync();
+
         }
         public async Task<Patient> GetPatientByIdAsync(int id)
         {
-           var patient= await _patientRepository.GetByIdAsync(id);
+            var patient = await _patientRepository.GetByIdAsync(id);
             return patient;
         }
         public async Task<string> AddAsync(Patient patient)
@@ -52,6 +52,14 @@ namespace ThyroCareX.Service.Impelemanation
             await _patientRepository.UpdateAsync(patient);
             return "Patient Updated Successfully";
         }
+
+        public async Task<string> DeleteAsync(Patient patient)
+        {
+            await _patientRepository.DeleteAsync(patient);
+            return "patient deleted succrssfully";
+
+        }
+       
 
         #endregion
     }

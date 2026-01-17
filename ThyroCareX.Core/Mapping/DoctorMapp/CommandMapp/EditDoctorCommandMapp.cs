@@ -14,9 +14,13 @@ namespace ThyroCareX.Core.Mapping.DoctorMapp
         {
             // Add your mapping configurations here in the future
             CreateMap<EditDoctorCommand, Doctor>()
-            .ForMember(x => x.DoctorID, opt => opt.MapFrom(src => src.Id))
-            .ForMember(x => x.ImagePath, opt => opt.MapFrom(src => src.ImageFile));
-            
+            .ForMember(x => x.DoctorID, opt => opt.Ignore())
+            .ForMember(x => x.ImagePath, opt => opt.Ignore())
+            .ForMember(dest => dest.ProfileImage, opt => opt.Ignore())
+            .ForAllMembers(opts => opts.Condition(
+        (src, dest, srcMember) => srcMember != null && srcMember.ToString() != "string"));
+
+
         }
     }
 }

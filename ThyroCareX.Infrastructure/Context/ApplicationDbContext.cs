@@ -21,6 +21,10 @@ namespace ThyroCareX.Infrastructure.Context
         public DbSet<MedicalRecord> MedicalRecords { get; set; }
         public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<Plan> Plans { get; set; }
+        public DbSet<PlanPrice> PlanPrices { get; set; }
+        public DbSet<WebhookLog> WebhookLogs { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -54,6 +58,10 @@ namespace ThyroCareX.Infrastructure.Context
             .WithOne() // كل User ممكن يكون له Doctor واحد
             .HasForeignKey<Doctor>(d => d.UserId)
             .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<WebhookLog>()
+               .HasIndex(x => x.StripeEventId)
+               .IsUnique();
         }
     }
 }

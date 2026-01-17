@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -16,37 +17,55 @@ namespace ThyroCareX.Service.Impelemanation
     {
         #region Fields
         private readonly JwtSettings _jwtSettings;
+        private readonly UserManager<User> _userManager;
         #endregion
         #region constructor
-        public AuthentcationService(JwtSettings jwtSettings)
+        public AuthentcationService(JwtSettings jwtSettings, UserManager<User> userManager)
         {
             _jwtSettings = jwtSettings;
-
+            _userManager = userManager;
         }
         #endregion
         #region Handle Methods
-        public Task<string> GetJWTToken(User user)
+        public async Task<string> GetJWTToken(User user)
         {
-            var cliams = new List<Claim>()
-            {
-                new Claim(nameof(UserClaimModel.UserName),user.UserName),
-                new Claim(nameof(UserClaimModel.Email),user.Email),
-                new Claim(nameof(UserClaimModel.PhoneNumber),user.PhoneNumber)
+            var (jwtToken, accessToken) = await GenerateJWTToken(user);
 
-            };
+           return accessToken;
+
+        }
+
+        public async Task<List<Claim>> GetClaims(User user)
+        {
+            var roles = await _userManager.GetRolesAsync(user);
+            var cliams = new List<Claim>()
+             {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(nameof(UserClaimModel.UserName), user.UserName ?? ""),
+                new Claim(nameof(UserClaimModel.Email),user.Email?? ""),
+                new Claim(nameof(UserClaimModel.PhoneNumber),user.PhoneNumber ?? "")
+             };
+            foreach (var role in roles)
+            {
+                cliams.Add(new Claim(ClaimTypes.Role, role));
+            }
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            cliams.AddRange(userClaims);
+            return cliams;
+        }
+       
+
+        private async Task<(JwtSecurityToken, string)> GenerateJWTToken(User user)
+        {
+            var claims = await GetClaims(user);
             var jwtToken = new JwtSecurityToken(
-                
                 _jwtSettings.Issuer,
                 _jwtSettings.Audience,
-                cliams,
-                expires:DateTime.Now.AddMinutes(2),
+                claims,
+                expires: DateTime.UtcNow.AddDays(_jwtSettings.AccessTokenExpireDate),
                 signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_jwtSettings.Secret)), SecurityAlgorithms.HmacSha256Signature));
-                var accessToken = new JwtSecurityTokenHandler().WriteToken(jwtToken);
-            return Task.FromResult(accessToken);
-
-
-
-
+            var accessToken = new JwtSecurityTokenHandler().WriteToken(jwtToken);
+            return (jwtToken, accessToken);
         }
         #endregion
     }

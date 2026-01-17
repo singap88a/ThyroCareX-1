@@ -12,8 +12,8 @@ using ThyroCareX.Service.Abstarct;
 
 namespace ThyroCareX.Core.Feature.Patients.Command.Handler
 {
-    public class PatientCommandHandler:ResponseHandler,IRequestHandler<AddPatientCommand,Response<string>>
-                                                      ,IRequestHandler<EditPatientCommand,Response<string>>
+    public class PatientCommandHandler : ResponseHandler, IRequestHandler<AddPatientCommand, Response<string>>
+                                                      , IRequestHandler<EditPatientCommand, Response<string>>
     {
         #region Fields
         private readonly IPatientService _patientService;
@@ -22,7 +22,7 @@ namespace ThyroCareX.Core.Feature.Patients.Command.Handler
         #region Constructor
         public PatientCommandHandler(IPatientService patientService, IMapper mapper)
         {
-            
+
             _patientService = patientService;
             _mapper = mapper;
         }
@@ -38,7 +38,7 @@ namespace ThyroCareX.Core.Feature.Patients.Command.Handler
             // Return Response
             return Success(result);
 
-       
+
         }
 
         public async Task<Response<string>> Handle(EditPatientCommand request, CancellationToken cancellationToken)
@@ -52,7 +52,7 @@ namespace ThyroCareX.Core.Feature.Patients.Command.Handler
             // Map the Requst to Patient entity
             var PatientMapper = _mapper.Map<Patient>(request);
             // Call the Service to Update Patient
-            var result =await _patientService.EditAsync(PatientMapper);
+            var result = await _patientService.EditAsync(PatientMapper);
             // Return Response
             return Success(result);
         }

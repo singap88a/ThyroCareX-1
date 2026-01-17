@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using ThyroCareX.Data.Enums;
 using ThyroCareX.Data.Models.Identity;
@@ -12,34 +13,38 @@ namespace ThyroCareX.Data.Models
             Patients = new HashSet<Patient>();
             MedicalRecords = new HashSet<MedicalRecord>();
             Payments = new HashSet<Payment>();
+            SubscriptionPlans = new HashSet<SubscriptionPlan>();
 
         }
         [Key]
         public int DoctorID { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
-        public string? Password { get; set; }
-        public string? Specialization { get; set; }
-        public Gender? gender { get; set; }
+        public string Password { get; set; }
+        public string Specialization { get; set; }
+        public Gender gender { get; set; }
         public int? NationalID { get; set; }
-        public string? PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string? Hospital { get; set; }
-        public string? ImagePath { get; set; }
+        public string? MedicalLicenseNumber { get; set; }
+        public string? Bio { get; set; }
+        public string ImagePath { get; set; }
+        public string? ProfileImage { get; set; }
+        public DoctorStatus Status { get; set; }
         public DateTime RegistrationAt { get; set; }
         public int UserId { get; set; }
 
         // علاقة الـ Navigation property
         [ForeignKey(nameof(UserId))]
         public User User { get; set; }
-        public int? SubscriptionPlanID { get; set; }
-        [ForeignKey("SubscriptionPlanID")]
-        public SubscriptionPlan SubscriptionPlan { get; set; }
 
         [InverseProperty("Doctor")]
         public virtual ICollection<Patient> Patients { get; set; }
         public virtual ICollection<MedicalRecord> MedicalRecords { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
+        public virtual ICollection<SubscriptionPlan> SubscriptionPlans { get; set; }
+         
 
 
 

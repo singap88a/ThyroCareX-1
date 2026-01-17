@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using ThyroCareX.Core;
 using ThyroCareX.Infrastructure;
 using ThyroCareX.Infrastructure.Context;
 using ThyroCareX.Service;
-
+using Microsoft.AspNetCore.Identity;
+using ThyroCareX.Data.Healpers;
+using ThyroCareX.Data.Models.Identity;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,6 +15,15 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"));
 });
+
+
+// Add Serilog
+builder.Host.UseSerilog((context, services, configuration) =>
+    configuration
+        .ReadFrom.Configuration(context.Configuration)
+        .WriteTo.Console()
+        .WriteTo.File("./logs/webhook-.log", rollingInterval: RollingInterval.Day));
+
 #region Dependancy Injection 
 builder.Services.AddInfrastructureDependencies()
                 .AddServiceDependencies()
@@ -36,10 +48,28 @@ app.UseSwaggerUI(c =>
 
 
 app.UseHttpsRedirection();
-
+app.Use(async (context, next) =>
+{
+    var host = context.Request.Host.Host;
+    var validHosts = builder.Configuration.GetSection("Stripe:WebhookHosts").Get<string[]>();
+    if (!validHosts.Any(h => host.EndsWith(h)))
+        context.Response.StatusCode = 403;
+    else
+        await next();
+});
+app.UseStaticFiles();
 app.UseAuthentication();
-
 app.UseAuthorization();
+app.UseRateLimiter();
+
+#region Seeding
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<int>>>();
+    await RoleSeeder.SeedAsync(userManager, roleManager);
+}
+#endregion
 
 app.MapControllers();
 

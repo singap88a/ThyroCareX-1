@@ -15,6 +15,7 @@ namespace ThyroCareX.Data.Healpers
         public bool ValidateAudience { get; set; }
         public bool ValidateLifeTime { get; set; }
         public bool ValidateIssuerSigningKey { get; set; }
-       
+        public int AccessTokenExpireDate { get; set; }
+
     }
 }

@@ -72,8 +72,15 @@ namespace ThyroCareX.Core.Feature.Authentication.Command.Validation
                 .NotEmpty().WithMessage("City is required.")
                 .MaximumLength(50);
 
-            RuleFor(x => x.State)
-                .MaximumLength(50);
+            RuleFor(x => x.IdentificationImage)
+                .NotNull()
+                .WithMessage("Doctor must upload an image.")
+                .Must(file => file.Length > 0 &&
+                                file.Length <= 5 * 1024 * 1024 &&
+                                (file.ContentType == "image/jpeg" ||
+                                file.ContentType == "image/png"))
+                .WithMessage("File must be JPEG or PNG and less than 5MB.");
+
 
             RuleFor(x => x.ZipCode)
                 .Matches(@"^\d{4,10}$").When(x => !string.IsNullOrEmpty(x.ZipCode))
