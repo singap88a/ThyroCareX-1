@@ -114,11 +114,15 @@ namespace ThyroCareX.Service.Impelemanation
            return await _doctorRepository.GetTableNoTracking()
                                          .Where(x=>x.Status==DoctorStatus.Pending).ToListAsync();
         }
+        public async Task<List<Doctor>> GetApprovedDoctorAsync()
+        {
+           return await _doctorRepository.GetTableNoTracking()
+                                         .Where(x=>x.Status==DoctorStatus.Approved).ToListAsync();
+        }
 
         public async Task<Doctor> GetDoctorByUserIdAsync(int userId)
         {
-            return await _doctorRepository.GetTableNoTracking()
-                                          .FirstOrDefaultAsync(x => x.UserId == userId);
+            return await _doctorRepository.GetTableAsTracking().FirstOrDefaultAsync(x => x.UserId == userId);
         }
 
         #endregion

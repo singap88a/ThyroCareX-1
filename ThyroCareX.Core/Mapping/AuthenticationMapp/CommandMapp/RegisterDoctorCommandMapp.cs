@@ -22,6 +22,8 @@ namespace ThyroCareX.Core.Mapping.AuthenticationMapp
                 .ForMember(dest => dest.ImagePath, opt => opt.Ignore())
                 .ForMember(dest=>dest.Specialization,opt=>opt.MapFrom(src=>src.Specialization));
 
+
+
             CreateMap<RegisterDoctorCommand, Doctor>();
 
 

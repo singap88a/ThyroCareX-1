@@ -33,7 +33,7 @@ namespace ThyroCareX.Core.Feature.Doctors.Queires.Handler
         #region Handle Functions
         public async Task<Response<List<GetDoctorListResponse>>> Handle(GetDoctorListQuery request, CancellationToken cancellationToken)
         {
-            var doctorList = await _doctorService.GetAllDoctorsAsync();
+            var doctorList = await _doctorService.GetApprovedDoctorAsync();
             var mappedDoctorList = _mapper.Map<List<GetDoctorListResponse>>(doctorList);
             return Success(mappedDoctorList);
         }

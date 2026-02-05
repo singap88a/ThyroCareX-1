@@ -99,6 +99,21 @@ namespace ThyroCareX.Infrastructure
                 });
             });
 
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("DefaultCorsPolicy", policy =>
+            //    {
+            //        policy
+            //            .WithOrigins(
+            //                "http://localhost:5173",
+            //                "https://thyro-care-x-6jdn.vercel.app"
+            //            )
+            //            .AllowAnyHeader()
+            //            .AllowAnyMethod()
+            //            
+            //    });
+            //});
+
             //Swagger Gn
             services.AddSwaggerGen(c =>
             {

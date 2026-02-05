@@ -11,6 +11,10 @@ namespace ThyroCareX.Infrastructure
         {
             services.AddScoped<IDoctorRepository, DoctorRepository>();
             services.AddScoped<IPatientRepository, PatientRepository>();
+            services.AddScoped<IPostRepository, PostRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
+            services.AddScoped<IPostLikeRepository, PostLikeRepository>();
+
 
             services.AddScoped(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));
 

@@ -21,6 +21,7 @@ namespace ThyroCareX.Core.Feature.Doctors.Queires.Result
         public string Hospital { get; set; }
         public string IdentificationImage { get; set; }
         public string? ProfileImage { get; set; }
+        public DateOnly DateofBirth {  get; set; }
         public DateTime RegistrationAt { get; set; }
     }
 }

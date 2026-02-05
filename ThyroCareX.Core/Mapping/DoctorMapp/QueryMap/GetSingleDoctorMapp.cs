@@ -13,9 +13,14 @@ namespace ThyroCareX.Core.Mapping.DoctorMapp
     {
         public void GetSinglrDoctorMapp()
         {
-            CreateMap<Doctor,GetSingleDoctorResponse>()
-                  .ForMember(dest => dest.SubscriptionPlanNames,
-                    opt => opt.MapFrom(src => src.SubscriptionPlans.Select(sp => sp.Plan.Name).ToList())); 
+            CreateMap<Doctor, GetSingleDoctorResponse>()
+                 .ForMember(dest => dest.ProfessionalBio, opt => opt.MapFrom(src => src.Bio))
+                  .ForMember(dest => dest.ProfileImage,
+                           opt => opt.MapFrom(src => src.ProfileImage != null ? src.ProfileImage : "default-doctor.png"))
+                .ForMember(dest => dest.IdentificationImage, opt => opt.MapFrom(src => src.ImagePath));
+
+
+
         }
 
     }

@@ -24,12 +24,37 @@ namespace ThyroCareX.Infrastructure.Context
         public DbSet<Plan> Plans { get; set; }
         public DbSet<PlanPrice> PlanPrices { get; set; }
         public DbSet<WebhookLog> WebhookLogs { get; set; }
-
-
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<PostLike> PostLikes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<PostLike>()
+                .HasOne(pl => pl.Post)
+                .WithMany(p => p.PostLikes)
+                .HasForeignKey(pl => pl.PostId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<PostLike>()
+                .HasOne(pl => pl.doctor)
+                .WithMany(d => d.PostLikes)
+                .HasForeignKey(pl => pl.DoctorId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.Post)
+                .WithMany(p => p.Comments)
+                .HasForeignKey(c => c.PostId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.Doctor)
+                .WithMany(d => d.Comments)
+                .HasForeignKey(c => c.DoctorId)
+                .OnDelete(DeleteBehavior.NoAction);
 
             // منع الـ Cascade Delete بين Payment و SubscriptionPlan
             modelBuilder.Entity<Payment>()
@@ -62,6 +87,12 @@ namespace ThyroCareX.Infrastructure.Context
             modelBuilder.Entity<WebhookLog>()
                .HasIndex(x => x.StripeEventId)
                .IsUnique();
+
+            modelBuilder.Entity<PostLike>()
+                .HasIndex(pl => new { pl.PostId, pl.DoctorId })
+                .IsUnique();
+
+
         }
     }
 }

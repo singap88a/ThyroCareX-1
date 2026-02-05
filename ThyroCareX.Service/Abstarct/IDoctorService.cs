@@ -20,6 +20,7 @@ namespace ThyroCareX.Service.Abstarct
         Task<string> DeleteAsync(Doctor doctor);
         Task<string> AddAsync(Doctor doctor);
         Task<List<Doctor>> GetPendingDoctorAsync();
+        Task<List<Doctor>> GetApprovedDoctorAsync();
         Task<Doctor> GetDoctorByUserIdAsync(int userId);
     }
 }

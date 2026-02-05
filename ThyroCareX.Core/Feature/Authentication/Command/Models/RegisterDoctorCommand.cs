@@ -19,7 +19,9 @@ namespace ThyroCareX.Core.Feature.Authentication.Command.Models
         public string ConfirmPassword { get; set; }
         public string PhoneNumber { get; set; }
         public Gender Gender { get; set; }
-        public DateTime DateofBirth { get; set; }
+        public string Hospital { get; set; }
+        public string MedicalLicenseNumber { get; set; }
+        public DateOnly DateofBirth { get; set; }
         public string Specialization { get; set; }
         public string Address { get; set; }
         public string City { get; set; }

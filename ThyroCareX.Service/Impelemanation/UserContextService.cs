@@ -22,5 +22,17 @@ namespace ThyroCareX.Service.Impelemanation
             .User
             .FindFirst(ClaimTypes.NameIdentifier)?
             .Value!;
+
+
+        public string? Role
+        {
+            get
+            {
+                return _httpContext.HttpContext?
+                    .User
+                    .FindFirst(ClaimTypes.Role)?
+                    .Value;
+            }
+        }
     }
 }

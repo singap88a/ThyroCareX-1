@@ -13,12 +13,11 @@ namespace ThyroCareX.Data.Models.Identity
     {
       
         public Gender Gender { get; set; }
-        public DateTime DateofBirth { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string ZipCode { get; set; }
         public string ImagePath { get; set; }
-        public string? Specialization { get; set; }
+        public string Specialization { get; set; }
 
 
     }

@@ -60,9 +60,16 @@ namespace ThyroCareX.Core.Feature.Authentication.Command.Validation
                 .IsInEnum().WithMessage("Gender must be valid.");
 
             RuleFor(x => x.DateofBirth)
-                .NotEmpty().WithMessage("Date of Birth is required.")
-                .Must(dob => dob < DateTime.Now.AddYears(-25))
-                    .WithMessage("Doctor must be at least 25 years old.");
+                 .NotEmpty().WithMessage("Date of Birth is required.")
+                  .Must(dob => dob <= DateOnly.FromDateTime(DateTime.Today.AddYears(-25)))
+                   .WithMessage("Doctor must be at least 25 years old.");
+
+            RuleFor(x => x.MedicalLicenseNumber)
+                    .NotEmpty().WithMessage("Medical License Number is required.");
+
+            RuleFor(x => x.Hospital)
+                 .NotEmpty().WithMessage("Hospital is required.");
+
 
             RuleFor(x => x.Address)
                 .NotEmpty().WithMessage("Address is required.")

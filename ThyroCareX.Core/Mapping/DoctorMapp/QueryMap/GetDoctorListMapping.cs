@@ -21,8 +21,11 @@ namespace ThyroCareX.Core.Mapping.DoctorMapp
                            opt => opt.MapFrom(src => src.ImagePath != null ? src.ImagePath : "default-doctor.png"))
                           .ForMember(dest => dest.Specialization, opt => opt.MapFrom(src => src.Specialization))
                          .ForMember(dest => dest.ProfileImage,
-                           opt => opt.MapFrom(src => src.ProfileImage != null ? src.ProfileImage : "default-doctor.png"));
-           
+                           opt => opt.MapFrom(src => src.ProfileImage != null ? src.ProfileImage : "default-doctor.png"))
+                         .ForMember(dest=>dest.MedicalLicenseNumber,opt=>opt.MapFrom(src=>src.MedicalLicenseNumber))
+                         .ForMember(dest=>dest.ProfessionalBio,opt=>opt.MapFrom(src=>src.Bio));
+
+
             CreateMap<User, GetDoctorListResponse>()
                 .ForMember(dest => dest.Specialization, opt => opt.MapFrom(src => src.Specialization));
 

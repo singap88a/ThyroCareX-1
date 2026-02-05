@@ -34,6 +34,18 @@ builder.Services.AddInfrastructureDependencies()
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
+//var CORS = "_cors";
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: CORS,
+//                      policy =>
+//                      {
+//                          policy.AllowAnyHeader();
+//                          policy.AllowAnyMethod();
+//                          policy.AllowAnyOrigin();
+//                      });
+//});
+
 
 
 var app = builder.Build();
@@ -48,15 +60,17 @@ app.UseSwaggerUI(c =>
 
 
 app.UseHttpsRedirection();
-app.Use(async (context, next) =>
-{
-    var host = context.Request.Host.Host;
-    var validHosts = builder.Configuration.GetSection("Stripe:WebhookHosts").Get<string[]>();
-    if (!validHosts.Any(h => host.EndsWith(h)))
-        context.Response.StatusCode = 403;
-    else
-        await next();
-});
+//app.Use(async (context, next) =>
+//{
+//    var host = context.Request.Host.Host;
+//    var validHosts = builder.Configuration.GetSection("Stripe:WebhookHosts").Get<string[]>();
+//    if (!validHosts.Any(h => host.EndsWith(h)))
+//        context.Response.StatusCode = 403;
+//    else
+//        await next();
+//});
+app.UseRouting();
+//app.UseCors(CORS);
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();

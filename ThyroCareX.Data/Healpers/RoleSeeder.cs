@@ -30,7 +30,6 @@ namespace ThyroCareX.Data.Healpers
                 EmailConfirmed = true,
                 PhoneNumber = "1234567890",
                 Gender = Enums.Gender.Male, 
-                DateofBirth = DateTime.Now.AddYears(-30),
                 Address = "Admin Address",
                 City = "Cairo",
                 ZipCode = "12345",

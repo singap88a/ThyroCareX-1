@@ -15,13 +15,8 @@ namespace ThyroCareX.Data.Models
         public BillingPeriod BillingPeriod { get; set; }
         public SubscriptionStatus Status { get; set; }
 
-        public string? StripeCustomerId { get; set; }
-        public string? StripeSubscriptionId { get; set; }
-
-        public DateTime? CurrentPeriodEnd { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         
 

@@ -14,6 +14,10 @@ namespace ThyroCareX.Data.Models
             MedicalRecords = new HashSet<MedicalRecord>();
             Payments = new HashSet<Payment>();
             SubscriptionPlans = new HashSet<SubscriptionPlan>();
+            Posts= new HashSet<Post>();
+            Comments= new HashSet<Comment>();
+            PostLikes= new HashSet<PostLike>();
+
 
         }
         [Key]
@@ -26,6 +30,7 @@ namespace ThyroCareX.Data.Models
         public int? NationalID { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
+        public DateOnly DateofBirth { get; set; }
         public string? Hospital { get; set; }
         public string? MedicalLicenseNumber { get; set; }
         public string? Bio { get; set; }
@@ -44,6 +49,9 @@ namespace ThyroCareX.Data.Models
         public virtual ICollection<MedicalRecord> MedicalRecords { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
         public virtual ICollection<SubscriptionPlan> SubscriptionPlans { get; set; }
+        public virtual ICollection<Post> Posts { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<PostLike> PostLikes { get; set; }
          
 
 

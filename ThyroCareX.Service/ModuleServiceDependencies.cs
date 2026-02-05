@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using ThyroCareX.Service.Abstarct;
 using ThyroCareX.Service.Impelemanation;
 
@@ -14,9 +15,15 @@ namespace ThyroCareX.Service
              services.AddScoped<IPatientService, PatientService>();
             services.AddScoped<IAuthentcationService, AuthentcationService>();
             services.AddScoped<IUserContextService, UserContextService>();
+            services.AddScoped<IPostService, PostService>();
+            services.AddScoped<ICommentService, CommentService>();
+            services.AddScoped<IPostLikeService, PostLikeService>();
             services.AddScoped<IImageService>(sp =>
-                new ImageService(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", "doctors")));
-
+            {
+                var env = sp.GetRequiredService<IWebHostEnvironment>();
+                return new ImageService(env.WebRootPath);
+            });
+            
             return services;
         }
     }

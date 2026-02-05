@@ -17,6 +17,8 @@ namespace ThyroCareX.Core.Mapping.DoctorMapp
             .ForMember(x => x.DoctorID, opt => opt.Ignore())
             .ForMember(x => x.ImagePath, opt => opt.Ignore())
             .ForMember(dest => dest.ProfileImage, opt => opt.Ignore())
+            .ForMember(dest=>dest.Bio,opt=>opt.MapFrom(src=>src.ProfessionalBio))
+            .ForMember(dest=>dest.MedicalLicenseNumber,opt=>opt.MapFrom(src=>src.MedicaLicenseNumber))
             .ForAllMembers(opts => opts.Condition(
         (src, dest, srcMember) => srcMember != null && srcMember.ToString() != "string"));
 

@@ -59,6 +59,10 @@ namespace ThyroCareX.Core.Feature.Doctors.Commands.Handler
                 return new Response<string>("Doctor not found");
             if (request.ProfileImage != null)
             {
+                if (!string.IsNullOrEmpty(doctor.ProfileImage))
+                {
+                    _imageService.DeleteImage(doctor.ProfileImage);
+                }
                 var imagePath = await _imageService.UploadImageAsync(
                     request.ProfileImage.OpenReadStream(),
                     request.ProfileImage.FileName);
