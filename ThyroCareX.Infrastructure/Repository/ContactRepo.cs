@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using ThyroCareX.Data.Models;
@@ -12,14 +11,14 @@ using ThyroCareX.Infrastructure.InfrastructureBases;
 
 namespace ThyroCareX.Infrastructure.Repository
 {
-    public class WebhookLogRepo:GenericRepositoryAsync<WebhookLog>,IWebhookLogRepo
+    public class ContactRepo: GenericRepositoryAsync<Contact>, IContactRepo
     {
-        public readonly DbSet<WebhookLog> _log;
-        public WebhookLogRepo(ApplicationDbContext dbContext):base(dbContext)
+        public readonly DbSet<Contact> _contact;
+        public ContactRepo(ApplicationDbContext dbContext) : base(dbContext)
         {
-            _log=dbContext.Set<WebhookLog>();
-
-
+            _contact= dbContext.Set<Contact>();
+            
         }
+
     }
 }

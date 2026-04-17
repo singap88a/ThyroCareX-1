@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using ThyroCareX.Data.Models;
 using ThyroCareX.Infrastructure.Abstarct;
+using ThyroCareX.Infrastructure.Repository;
 using ThyroCareX.Service.Abstarct;
 
 namespace ThyroCareX.Service.Impelemanation
@@ -31,9 +33,29 @@ namespace ThyroCareX.Service.Impelemanation
             
         }
 
+        public async Task<string> DeletePostAsync(Post post)
+        {
+            var trans = _postRepository.BeginTransaction();
+            try
+            {
+                await _postRepository.DeleteAsync(post);
+                await trans.CommitAsync();
+                return "Success";
+            }
+            catch
+            {
+                await trans.RollbackAsync();
+                return "Failed";
+            }
+
+        }
+
         public async Task<List<Post>> GetAllPostsAsync()
         {
-            return await _postRepository.GetAllPostsAsync();
+            var AllPosts= await _postRepository.GetAllPostsAsync();
+            return AllPosts;
+
+            
         }
 
         public async Task<Post> GetPostByIdAsync(int id)

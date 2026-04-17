@@ -13,6 +13,8 @@ using ThyroCareX.Service.Abstarct;
 namespace ThyroCareX.Core.Feature.Community.Command.Handler
 {
     public class CommentCommandHandler: ResponseHandler, IRequestHandler<AddCommentCommand,Response<string>>
+                                                       , IRequestHandler<DeleteCommentCommand,Response<string>>
+                                                              
     {
         #region Fieldes
         private readonly ICommentService _commentService;
@@ -61,6 +63,28 @@ namespace ThyroCareX.Core.Feature.Community.Command.Handler
             var result=await _commentService.AddCommentAsync(comment);
 
             return Success("Comment Added Successfully");
+
+        }
+
+        public async Task<Response<string>> Handle(DeleteCommentCommand request, CancellationToken cancellationToken)
+        {
+            var userIdString = _userContextService.UserId;
+
+            if (string.IsNullOrEmpty(userIdString))
+                return new Response<string>("Unauthorized");
+
+            if (!int.TryParse(userIdString, out var userId))
+                return new Response<string>("Invalid UserId");
+
+            var comment= await _commentService.GetCommentByIdAsync(request.CommentId);
+
+            if (comment == null) return new Response<string>("Comment Not Found");
+           
+            
+            var deletedComment = await _commentService.DeleteCommentAsync(comment);
+
+            return Success("Deleted Successfully");
+
 
         }
 

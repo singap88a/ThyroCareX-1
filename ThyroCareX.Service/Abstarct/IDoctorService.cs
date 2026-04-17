@@ -10,8 +10,8 @@ namespace ThyroCareX.Service.Abstarct
     public interface IDoctorService
     {
         Task<List<Doctor>> GetAllDoctorsAsync();
-        Task<Doctor>GetDoctorByIdWithIncludeAsync(int id);
-        Task <string> EditAsync(Doctor doctor);
+        Task<Doctor> GetDoctorByIdWithIncludeAsync(int id);
+        Task<string> EditAsync(Doctor doctor);
         Task<Doctor> GetDoctorByIdAsync(int id);
         Task<bool> IsEmailExistExcludeSelf(string email, int id);
         Task<bool> IsEmailTakenAsync(string email);

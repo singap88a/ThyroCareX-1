@@ -12,7 +12,6 @@ namespace ThyroCareX.Data.Models
         {
             Patients = new HashSet<Patient>();
             MedicalRecords = new HashSet<MedicalRecord>();
-            Payments = new HashSet<Payment>();
             SubscriptionPlans = new HashSet<SubscriptionPlan>();
             Posts= new HashSet<Post>();
             Comments= new HashSet<Comment>();
@@ -47,7 +46,6 @@ namespace ThyroCareX.Data.Models
         [InverseProperty("Doctor")]
         public virtual ICollection<Patient> Patients { get; set; }
         public virtual ICollection<MedicalRecord> MedicalRecords { get; set; }
-        public virtual ICollection<Payment> Payments { get; set; }
         public virtual ICollection<SubscriptionPlan> SubscriptionPlans { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }

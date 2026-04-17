@@ -14,7 +14,8 @@ using ThyroCareX.Service.Impelemanation;
 
 namespace ThyroCareX.Core.Feature.Community.Command.Handler
 {
-    public class PostCommandHandler:ResponseHandler, IRequestHandler<AddPostCommand,Response<string>>
+    public class PostCommandHandler:ResponseHandler, IRequestHandler<AddPostCommand,Response<string>>,
+                                                      IRequestHandler<DeletePostCommand, Response<string>>
     {
         #region Prop
         private readonly IPostService _postService;
@@ -69,6 +70,18 @@ namespace ThyroCareX.Core.Feature.Community.Command.Handler
             var result= await _postService.AddPostAsync(post);
             return Success("Post Added Successfully");
            
+        }
+
+        public async Task<Response<string>> Handle(DeletePostCommand request, CancellationToken cancellationToken)
+        {
+            var post = await _postService.GetPostByIdAsync(request.PostId);
+            //return NotFound
+            if (post == null)
+            {
+                return NotFound<string>("Post Is Not Found");
+            }
+            var result = await _postService.DeletePostAsync(post);
+            return Success(result);
         }
         #endregion
     }

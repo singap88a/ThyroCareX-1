@@ -441,47 +441,27 @@ namespace ThyroCareX.Infrastructure.Migrations
 
             modelBuilder.Entity("ThyroCareX.Data.Models.Payment", b =>
                 {
-                    b.Property<int>("PaymentID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(10,2)");
-
-                    b.Property<int>("DoctorID")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsRefunded")
-                        .HasColumnType("bit");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PaymentMethod")
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
-                    b.Property<int>("PaymentStatus")
+                    b.Property<int>("SubscriptionId")
                         .HasColumnType("int");
 
-                    b.Property<string>("StripeInvoiceId")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("Id");
 
-                    b.Property<string>("StripePaymentIntentId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SubscriptionPlanID")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("VerifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("PaymentID");
-
-                    b.HasIndex("DoctorID");
-
-                    b.HasIndex("SubscriptionPlanID");
+                    b.HasIndex("SubscriptionId");
 
                     b.ToTable("Payments");
                 });
@@ -494,52 +474,25 @@ namespace ThyroCareX.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("DoctorId")
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DurationInDays")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsFree")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DoctorId");
-
-                    b.ToTable("Plans");
-                });
-
-            modelBuilder.Entity("ThyroCareX.Data.Models.PlanPrice", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BillingPeriod")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PlanId")
+                    b.Property<int>("PlanType")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("StripePriceId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("PlanId");
-
-                    b.ToTable("PlanPrices");
+                    b.ToTable("Plans");
                 });
 
             modelBuilder.Entity("ThyroCareX.Data.Models.Post", b =>
@@ -614,7 +567,10 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("PlanId")
+                    b.Property<string>("OrderId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PlanId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("StartDate")
@@ -623,6 +579,9 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<string>("TransactionId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("SubscriptionPlanID");
 
                     b.HasIndex("DoctorId");
@@ -630,41 +589,6 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.HasIndex("PlanId");
 
                     b.ToTable("SubscriptionPlans");
-                });
-
-            modelBuilder.Entity("ThyroCareX.Data.Models.WebhookLog", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EventType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Payload")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ProcessedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("StripeEventId")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StripeEventId")
-                        .IsUnique();
-
-                    b.ToTable("WebhookLogs");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -729,7 +653,7 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.HasOne("ThyroCareX.Data.Models.Post", "Post")
                         .WithMany("Comments")
                         .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Doctor");
@@ -780,43 +704,13 @@ namespace ThyroCareX.Infrastructure.Migrations
 
             modelBuilder.Entity("ThyroCareX.Data.Models.Payment", b =>
                 {
-                    b.HasOne("ThyroCareX.Data.Models.Doctor", "Doctor")
-                        .WithMany("Payments")
-                        .HasForeignKey("DoctorID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ThyroCareX.Data.Models.SubscriptionPlan", "SubscriptionPlan")
-                        .WithMany("Payments")
-                        .HasForeignKey("SubscriptionPlanID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Doctor");
-
-                    b.Navigation("SubscriptionPlan");
-                });
-
-            modelBuilder.Entity("ThyroCareX.Data.Models.Plan", b =>
-                {
-                    b.HasOne("ThyroCareX.Data.Models.Doctor", "Doctor")
+                    b.HasOne("ThyroCareX.Data.Models.SubscriptionPlan", "subscriptionPlan")
                         .WithMany()
-                        .HasForeignKey("DoctorId")
+                        .HasForeignKey("SubscriptionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Doctor");
-                });
-
-            modelBuilder.Entity("ThyroCareX.Data.Models.PlanPrice", b =>
-                {
-                    b.HasOne("ThyroCareX.Data.Models.Plan", "Plan")
-                        .WithMany("Prices")
-                        .HasForeignKey("PlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Plan");
+                    b.Navigation("subscriptionPlan");
                 });
 
             modelBuilder.Entity("ThyroCareX.Data.Models.Post", b =>
@@ -841,7 +735,7 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.HasOne("ThyroCareX.Data.Models.Post", "Post")
                         .WithMany("PostLikes")
                         .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Post");
@@ -857,7 +751,9 @@ namespace ThyroCareX.Infrastructure.Migrations
 
                     b.HasOne("ThyroCareX.Data.Models.Plan", "Plan")
                         .WithMany()
-                        .HasForeignKey("PlanId");
+                        .HasForeignKey("PlanId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Doctor");
 
@@ -872,8 +768,6 @@ namespace ThyroCareX.Infrastructure.Migrations
 
                     b.Navigation("Patients");
 
-                    b.Navigation("Payments");
-
                     b.Navigation("PostLikes");
 
                     b.Navigation("Posts");
@@ -886,21 +780,11 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Navigation("MedicalRecords");
                 });
 
-            modelBuilder.Entity("ThyroCareX.Data.Models.Plan", b =>
-                {
-                    b.Navigation("Prices");
-                });
-
             modelBuilder.Entity("ThyroCareX.Data.Models.Post", b =>
                 {
                     b.Navigation("Comments");
 
                     b.Navigation("PostLikes");
-                });
-
-            modelBuilder.Entity("ThyroCareX.Data.Models.SubscriptionPlan", b =>
-                {
-                    b.Navigation("Payments");
                 });
 #pragma warning restore 612, 618
         }

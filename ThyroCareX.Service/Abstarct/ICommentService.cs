@@ -12,5 +12,7 @@ namespace ThyroCareX.Service.Abstarct
         Task<string> AddCommentAsync(Comment comment);
         Task<List<Comment>> GetAllCommentsAsync();
         Task< List<Comment>>GetCommentsByPostIdAsync(int id);
+        Task<Comment> GetCommentByIdAsync(int id);
+        Task<string> DeleteCommentAsync( Comment comment );
     }
 }

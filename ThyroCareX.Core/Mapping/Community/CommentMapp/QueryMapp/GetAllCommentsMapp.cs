@@ -14,6 +14,7 @@ namespace ThyroCareX.Core.Mapping.Community.CommentMapp
         public void GetAllCommentsMapp()
         {
             CreateMap<Comment, GetAllCommentsRespone>()
+                .ForMember(dest => dest.CommentId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.DoctorName, opt => opt.MapFrom(src => src.Doctor.FullName))
                 .ForMember(dest => dest.DoctorImage, opt => opt.MapFrom(src => src.Doctor.ProfileImage))
                 .ForMember(dest => dest.Specialization, opt => opt.MapFrom(src => src.Doctor.Specialization));

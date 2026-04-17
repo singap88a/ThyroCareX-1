@@ -2,15 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using ThyroCareX.Data.Models;
 using ThyroCareX.Infrastructure.Abstarct;
+using ThyroCareX.Infrastructure.Repository;
 using ThyroCareX.Service.Abstarct;
 
 namespace ThyroCareX.Service.Impelemanation
 {
-    public class CommentService:ICommentService
+    public class CommentService : ICommentService
     {
         #region Fiedls
         private readonly ICommentRepository _commentRepository;
@@ -30,10 +32,32 @@ namespace ThyroCareX.Service.Impelemanation
             return "Comment Added Successfully";
         }
 
+        public async Task<string> DeleteCommentAsync(Comment comment)
+        {
+            var trans =_commentRepository.BeginTransaction();
+            try
+            {
+                await _commentRepository.DeleteAsync(comment);
+                await trans.CommitAsync();
+                return "Success";
+            }
+            catch
+            {
+                await trans.RollbackAsync();
+                return "Failed";
+            }
+        }
+
         public async Task<List<Comment>> GetAllCommentsAsync()
         {
             return await _commentRepository.GetAllCommentsAsync();
 
+        }
+
+        public async Task<Comment> GetCommentByIdAsync(int id)
+        {
+            var comment=await _commentRepository.GetByIdAsync(id);
+            return comment;
         }
 
         public async Task<List<Comment>> GetCommentsByPostIdAsync(int id)
@@ -42,6 +66,7 @@ namespace ThyroCareX.Service.Impelemanation
             
 
         }
+
 
 
 

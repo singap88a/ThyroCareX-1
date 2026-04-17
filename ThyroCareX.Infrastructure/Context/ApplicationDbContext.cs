@@ -20,23 +20,22 @@ namespace ThyroCareX.Infrastructure.Context
         public DbSet<Patient> Patients { get; set; }
         public DbSet<MedicalRecord> MedicalRecords { get; set; }
         public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
-        public DbSet<Payment> Payments { get; set; }
-        public DbSet<Plan> Plans { get; set; }
-        public DbSet<PlanPrice> PlanPrices { get; set; }
-        public DbSet<WebhookLog> WebhookLogs { get; set; }
+       public DbSet<Plan> Plans { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<PostLike> PostLikes { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<PostLike>()
-                .HasOne(pl => pl.Post)
-                .WithMany(p => p.PostLikes)
-                .HasForeignKey(pl => pl.PostId)
-                .OnDelete(DeleteBehavior.NoAction);
+             .HasOne(pl => pl.Post)
+             .WithMany(p => p.PostLikes)
+             .HasForeignKey(pl => pl.PostId)
+             .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<PostLike>()
                 .HasOne(pl => pl.doctor)
@@ -48,7 +47,7 @@ namespace ThyroCareX.Infrastructure.Context
                 .HasOne(c => c.Post)
                 .WithMany(p => p.Comments)
                 .HasForeignKey(c => c.PostId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Comment>()
                 .HasOne(c => c.Doctor)
@@ -56,12 +55,7 @@ namespace ThyroCareX.Infrastructure.Context
                 .HasForeignKey(c => c.DoctorId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            // منع الـ Cascade Delete بين Payment و SubscriptionPlan
-            modelBuilder.Entity<Payment>()
-                .HasOne(p => p.SubscriptionPlan)
-                .WithMany(sp => sp.Payments)
-                .HasForeignKey(p => p.SubscriptionPlanID)
-                .OnDelete(DeleteBehavior.Restrict);  // أو NoAction
+      
 
             // منع الـ Cascade Delete بين MedicalRecord و Patient
             modelBuilder.Entity<MedicalRecord>()
@@ -84,9 +78,7 @@ namespace ThyroCareX.Infrastructure.Context
             .HasForeignKey<Doctor>(d => d.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<WebhookLog>()
-               .HasIndex(x => x.StripeEventId)
-               .IsUnique();
+            
 
             modelBuilder.Entity<PostLike>()
                 .HasIndex(pl => new { pl.PostId, pl.DoctorId })

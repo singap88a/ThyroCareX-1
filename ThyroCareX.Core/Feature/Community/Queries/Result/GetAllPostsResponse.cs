@@ -9,6 +9,7 @@ namespace ThyroCareX.Core.Feature.Community.Queries.Result
     public class GetAllPostsResponse
     {
     
+        public int PostId { get; set; }
         public string DoctorName { get; set; }
         public string DoctorImage { get; set; }
         public string Specialization { get; set; }

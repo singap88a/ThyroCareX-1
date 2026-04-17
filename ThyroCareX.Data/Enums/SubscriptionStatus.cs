@@ -11,7 +11,8 @@ namespace ThyroCareX.Data.Enums
         Free = 0,        // خطة مجانية، مش محتاج دفع
         Trialing = 1,    // فترة تجربة (اختياري)
         Active = 2,      // الاشتراك شغال والدفع ناجح
-        PastDue = 3,     // الدفع فشل أو غير مكتمل
-        Canceled = 4     // الاشتراك اتلغى
+        Failed = 3,     // الدفع فشل أو غير مكتمل
+        Canceled = 4 ,    // الاشتراك اتلغى
+        Pending = 5,
     }
 }

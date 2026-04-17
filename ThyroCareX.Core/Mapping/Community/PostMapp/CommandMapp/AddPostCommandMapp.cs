@@ -13,6 +13,7 @@ namespace ThyroCareX.Core.Mapping.Community.PostMapp
         public void AddPostCommandMappers() 
         {
             CreateMap<AddPostCommand, Post>()
+
                 .ForMember(dest => dest.ImagePost, opt => opt.Ignore());
 
         }

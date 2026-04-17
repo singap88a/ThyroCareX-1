@@ -1,0 +1,20 @@
+﻿using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ThyroCareX.Core.Bases;
+using ThyroCareX.Data.Enums;
+
+namespace ThyroCareX.Core.Feature.Plans.Commands.Model
+{
+    public class AddPlanCommand:IRequest<Response<string>>
+    {
+        public EnumPlan PlanType { get; set; }
+        public string? Description { get; set; }
+        public decimal Price { get; set; }
+        public int DurationInDays { get; set; }
+
+    }
+}

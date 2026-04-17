@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -76,15 +76,18 @@ namespace ThyroCareX.Infrastructure
                    RoleClaimType = ClaimTypes.Role 
                };
            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("DoctorOrAdmin", policy =>
+                    policy.RequireRole("Doctor", "Admin"));
+            });
 
-            //services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
-            //    options.AddPolicy("DoctorOnly", policy => policy.RequireRole("Doctor"));
-            //});
 
             // Add Stripe configuration
             //services.Configure<StripeSettings>(configuration.GetSection("Stripe"));
+
+            // Add PayMob configuration
+            services.Configure<PayMobSettings>(configuration.GetSection("PayMobSettings"));
 
             services.AddRateLimiter(options =>
             {

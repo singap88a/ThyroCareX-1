@@ -34,8 +34,8 @@ namespace ThyroCareX.Service.Impelemanation
 
         public async Task<Doctor> GetDoctorByIdWithIncludeAsync(int id)
         {
-            var Doctor=await _doctorRepository.GetTableNoTracking()
-                .Include(x=>x.SubscriptionPlans).Where(x=>x.DoctorID.Equals(id)).FirstOrDefaultAsync();
+            var Doctor = await _doctorRepository.GetTableNoTracking()
+                .Include(x => x.SubscriptionPlans).Where(x => x.DoctorID.Equals(id)).FirstOrDefaultAsync();
 
             return Doctor;
         }

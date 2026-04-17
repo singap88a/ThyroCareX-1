@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using ThyroCareX.Service.Abstarct;
 using ThyroCareX.Service.Impelemanation;
@@ -18,6 +18,8 @@ namespace ThyroCareX.Service
             services.AddScoped<IPostService, PostService>();
             services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<IPostLikeService, PostLikeService>();
+            services.AddScoped<IPlanService, PlanService>();
+            services.AddHttpClient<IPaymentService, PayMobService>();
             services.AddScoped<IImageService>(sp =>
             {
                 var env = sp.GetRequiredService<IWebHostEnvironment>();

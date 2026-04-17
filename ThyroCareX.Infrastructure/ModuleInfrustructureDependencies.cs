@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using ThyroCareX.Infrastructure.Abstarct;
 using ThyroCareX.Infrastructure.InfrastructureBases;
 using ThyroCareX.Infrastructure.Repository;
@@ -14,6 +14,9 @@ namespace ThyroCareX.Infrastructure
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<ICommentRepository, CommentRepository>();
             services.AddScoped<IPostLikeRepository, PostLikeRepository>();
+            services.AddScoped<IContactRepo, ContactRepo>();
+            services.AddScoped<IPlanRepo, PlanRepo>();
+            services.AddScoped<ISubscriptionPlanRepo, SubscriptionPlanRepo>();
 
 
             services.AddScoped(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));

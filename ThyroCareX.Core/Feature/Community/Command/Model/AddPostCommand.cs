@@ -11,6 +11,7 @@ namespace ThyroCareX.Core.Feature.Community.Command.Model
 {
     public class AddPostCommand : IRequest<Response<string>>
     {
+        
         public string? Content { get; set; } 
         public IFormFile? ImagePost { get; set; }
     }

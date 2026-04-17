@@ -8,7 +8,9 @@ using ThyroCareX.Infrastructure.InfrastructureBases;
 
 namespace ThyroCareX.Infrastructure.Abstarct
 {
-    public interface IWebhookLogRepo:IGenericRepositoryAsync<WebhookLog>
+    public interface IPlanRepo: IGenericRepositoryAsync<Plan>
     {
+        Task<List<Plan>> GetAllPlanAsync();
+
     }
 }

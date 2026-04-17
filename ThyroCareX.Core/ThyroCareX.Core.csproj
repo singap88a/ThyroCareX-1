@@ -24,6 +24,9 @@
 
   <ItemGroup>
     <Folder Include="Feature\AplicationUser\Queries\" />
+    <Folder Include="Feature\Contact\Query\" />
+    <Folder Include="Feature\Payment\Commands\Validation\" />
+    <Folder Include="Feature\Payment\Queries\" />
   </ItemGroup>
 
 </Project>
