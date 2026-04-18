@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using ThyroCareX.Core;
@@ -34,17 +34,17 @@ builder.Services.AddInfrastructureDependencies()
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
-//var CORS = "_cors";
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy(name: CORS,
-//                      policy =>
-//                      {
-//                          policy.AllowAnyHeader();
-//                          policy.AllowAnyMethod();
-//                          policy.AllowAnyOrigin();
-//                      });
-//});
+var CORS = "_cors";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: CORS,
+                      policy =>
+                      {
+                          policy.AllowAnyHeader();
+                          policy.AllowAnyMethod();
+                          policy.WithOrigins("https://thyro-care-x-6jdn.vercel.app");
+                      });
+});
 
 
 
@@ -70,7 +70,7 @@ app.UseHttpsRedirection();
 //        await next();
 //});
 app.UseRouting();
-//app.UseCors(CORS);
+app.UseCors(CORS);
 app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();

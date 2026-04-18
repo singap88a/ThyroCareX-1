@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +16,10 @@ namespace ThyroCareX.Core.Feature.Plans.Commands.Validation
            .IsInEnum()
            .WithMessage("Invalid plan type");
 
-            // Description
-            RuleFor(x => x.Description)
+            // Features
+            RuleFor(x => x.Features)
                 .NotEmpty()
-                .WithMessage("Description is required")
-                .MaximumLength(500)
-                .WithMessage("Description cannot exceed 500 characters");
+                .WithMessage("At least one feature is required.");
 
             // Price
             RuleFor(x => x.Price)

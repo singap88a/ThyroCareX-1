@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +12,9 @@ namespace ThyroCareX.Core.Mapping.PlanMapp
     {
             public void PlanCommandMapping()
             {
-            // Mapping configurations for Plan commands can be added here in the future
-            CreateMap<AddPlanCommand,Plan>();
+            CreateMap<AddPlanCommand, Plan>();
+            CreateMap<UpdatePlanCommand, Plan>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
         }
     }
 }

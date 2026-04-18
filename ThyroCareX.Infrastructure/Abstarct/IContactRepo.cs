@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ using ThyroCareX.Infrastructure.InfrastructureBases;
 
 namespace ThyroCareX.Infrastructure.Abstarct
 {
-    public interface IContactRepo:IGenericRepositoryAsync<Contact>
+    public interface IContactRepo : IGenericRepositoryAsync<Contact>
     {
     }
 }

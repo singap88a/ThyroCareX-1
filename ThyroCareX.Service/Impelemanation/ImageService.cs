@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,24 +12,30 @@ namespace ThyroCareX.Service.Impelemanation
 {
     public class ImageService:IImageService
     {
-        private readonly string _rootPath;
+        private readonly string _baseRootPath;
+        private readonly string _wwwroot;
 
         public ImageService(string rootPath)
         {
-            _rootPath = Path.Combine(rootPath, "uploads", "doctors");
+            _wwwroot = rootPath;
+            _baseRootPath = Path.Combine(rootPath, "uploads");
 
-            if (!Directory.Exists(_rootPath))
-                Directory.CreateDirectory(_rootPath);
+            if (!Directory.Exists(_baseRootPath))
+                Directory.CreateDirectory(_baseRootPath);
         }
 
-        public async Task<string> UploadImageAsync(Stream fileStream, string originalFileName)
+        public async Task<string> UploadImageAsync(Stream fileStream, string originalFileName, string subFolder = "doctors")
         {
             if (fileStream == null || fileStream.Length == 0)
                 return null;
 
+            var targetFolder = Path.Combine(_baseRootPath, subFolder);
+            if (!Directory.Exists(targetFolder))
+                Directory.CreateDirectory(targetFolder);
+
             // توليد اسم جديد
             var fileName = $"{Guid.NewGuid():N}.webp";
-            var filePath = Path.Combine(_rootPath, fileName);
+            var filePath = Path.Combine(targetFolder, fileName);
 
             // استخدم SkiaSharp لتحويل الصورة مباشرة إلى WebP
             using var skBitmap = SKBitmap.Decode(fileStream);
@@ -44,14 +50,15 @@ namespace ThyroCareX.Service.Impelemanation
              data.SaveTo(output);
 
             // إعادة المسار النسبي
-            return Path.Combine("uploads", "doctors", fileName).Replace("\\", "/");
+            return Path.Combine("uploads", subFolder, fileName).Replace("\\", "/");
         }
-        public void DeleteImage(string path)
+        public void DeleteImage(string path, string subFolder = "doctors")
         {
             if (string.IsNullOrWhiteSpace(path))
                 return;
 
-            var fullPath = Path.Combine(_rootPath, Path.GetFileName(path));
+            var fileName = Path.GetFileName(path);
+            var fullPath = Path.Combine(_wwwroot, "uploads", subFolder, fileName);
 
             if (File.Exists(fullPath))
                 File.Delete(fullPath);

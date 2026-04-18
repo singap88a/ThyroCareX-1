@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using ThyroCareX.Bases;
 using ThyroCareX.Core.Feature.Payment.Commands.Models;
+using ThyroCareX.Core.Feature.Payment.Queries.Models;
 using ThyroCareX.Service.Abstarct;
 
 namespace ThyroCareX.Controllers
@@ -21,14 +22,36 @@ namespace ThyroCareX.Controllers
         }
 
         [HttpGet("return")]
-        public IActionResult Return([FromQuery] Dictionary<string, string> query)
+        public async Task<IActionResult> Return([FromQuery] Dictionary<string, string> query, [FromServices] IPaymentService paymentService)
         {
             var success = query.ContainsKey("success") && query["success"] == "true";
+            
+            // For localhost development, webhook won't be reachable by Paymob servers.
+            // So we manually pick up order & transaction ids from the redirect query string.
+            if (query.TryGetValue("order", out var orderId) && query.TryGetValue("id", out var transactionId))
+            {
+                await paymentService.UpdateSubscriptionStatus(orderId, success, transactionId);
+            }
 
             return success
-                ? Redirect("https://frontend.com/payment-success")
-                : Redirect("https://frontend.com/payment-failed");
+                ? Redirect("https://thyro-care-x-6jdn.vercel.app/payment/success")
+                : Redirect("https://thyro-care-x-6jdn.vercel.app/payment/failure");
         }
+
+        [HttpGet("history")]
+        public async Task<IActionResult> GetPaymentHistory()
+        {
+            var response = await Mediator.Send(new GetSubscriptionHistoryQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("stats")]
+        public async Task<IActionResult> GetAdminStats()
+        {
+            var response = await Mediator.Send(new GetAdminDashboardStatsQuery());
+            return Ok(response);
+        }
+
         [HttpPost("webhook")]
         public async Task<IActionResult> Webhook([FromBody] JsonElement body, [FromQuery] string hmac)
         {
@@ -40,6 +63,5 @@ namespace ThyroCareX.Controllers
 
             return Ok();
         }
-
     }
 }

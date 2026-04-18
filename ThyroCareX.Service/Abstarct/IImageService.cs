@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ namespace ThyroCareX.Service.Abstarct
 {
     public interface IImageService
     {
-        Task<string> UploadImageAsync(Stream fileStream, string originalFileName);
-        void DeleteImage(string path);
+        Task<string> UploadImageAsync(Stream fileStream, string originalFileName, string subFolder = "doctors");
+        void DeleteImage(string path, string subFolder = "doctors");
     }
 }

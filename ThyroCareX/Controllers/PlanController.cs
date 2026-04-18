@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ThyroCareX.Bases;
 using ThyroCareX.Core.Feature.Community.Queries.Models;
@@ -7,7 +7,8 @@ using ThyroCareX.Core.Feature.Plans.Queries.Models;
 
 namespace ThyroCareX.Controllers
 {
-
+    [Route("api/[controller]")]
+    [ApiController]
     public class PlanController : AppControllerBase
     {
         [HttpGet()]
@@ -37,6 +38,20 @@ namespace ThyroCareX.Controllers
             var response = await Mediator.Send(command);
             if (response == null)
                 return BadRequest("Failed To Add Plan");
+            return Ok(response);
+        }
+
+        [HttpPut()]
+        public async Task<IActionResult> UpdatePlan([FromBody]UpdatePlanCommand command)
+        {
+            var response = await Mediator.Send(command);
+            return Ok(response);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePlan(int id)
+        {
+            var response = await Mediator.Send(new DeletePlanCommand(id));
             return Ok(response);
         }
     }

@@ -105,6 +105,7 @@ namespace ThyroCareX.Service.Impelemanation
                 Currency = "EGP",
                 IntegrationId = int.Parse(_payMobSettings.CardIntegrationId),
                 NotificationUrl = _payMobSettings.NotificationUrl,
+                RedirectionUrl = "https://thyrocarex.runasp.net/api/Payment/return",
                 BillingData = new BillingData
                 {
                     FirstName = doctor.FullName ?? "NA",

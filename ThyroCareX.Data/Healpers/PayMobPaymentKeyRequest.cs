@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +32,10 @@ namespace ThyroCareX.Data.Healpers
 
         [JsonPropertyName("lock_order_when_paid")]
         public string LockOrderWhenPaid { get; set; } = "false";
+        
+        [JsonPropertyName("redirection_url")]
+        public string RedirectionUrl { get; set; } = string.Empty;
+
         public string NotificationUrl { get; set; }
     }
 }

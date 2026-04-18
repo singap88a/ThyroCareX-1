@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,8 @@ namespace ThyroCareX.Core.Feature.Plans.Queries.Result
     public class SinglePlanResponse
     {
         public EnumPlan PlanType { get; set; }
-        public string? Description { get; set; }
+        public string Description { get; set; } = string.Empty;
+        public List<string> Features { get; set; } = new List<string>();
         public decimal Price { get; set; }
         public int DurationInDays { get; set; }
 

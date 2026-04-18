@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +50,12 @@ namespace ThyroCareX.Service.Impelemanation
         public async Task<Plan> GetPlanById(int id)
         {
             return await _planRepo.GetByIdAsync(id);
+        }
+
+        public async Task<string> UpdatePlanAsync(Plan plan)
+        {
+            await _planRepo.UpdateAsync(plan);
+            return "Success";
         }
     }
 

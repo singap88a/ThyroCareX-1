@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,8 @@ namespace ThyroCareX.Core.Feature.Plans.Commands.Model
     public class AddPlanCommand:IRequest<Response<string>>
     {
         public EnumPlan PlanType { get; set; }
-        public string? Description { get; set; }
+        public string Description { get; set; } = string.Empty;
+        public List<string> Features { get; set; } = new List<string>();
         public decimal Price { get; set; }
         public int DurationInDays { get; set; }
 

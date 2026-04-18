@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +13,6 @@ namespace ThyroCareX.Service.Abstarct
         Task<string>AddPlan(Plan plan);
         Task<Plan> GetPlanById(int id);
         Task<string> DeletePlanAsync(Plan plan);
+        Task<string> UpdatePlanAsync(Plan plan);
     }
 }

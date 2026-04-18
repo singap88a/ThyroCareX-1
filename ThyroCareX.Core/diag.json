@@ -1,0 +1,4025 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Microsoft (R) Visual C# Compiler",
+        "version": "5.3.0.0",
+        "fileVersion": "5.3.0-2.26180.118 (1e7d5a8ae309af8fad1826a5e968aae30719a281)",
+        "semanticVersion": "5.3.0",
+        "language": "en-GB"
+      },
+      "results": [
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 56,
+                  "endLine": 17,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 63,
+                  "endLine": 28,
+                  "endColumn": 67
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 61,
+                  "endLine": 39,
+                  "endColumn": 65
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 59,
+                  "endLine": 48,
+                  "endColumn": 63
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 68,
+                  "endLine": 57,
+                  "endColumn": 72
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 57,
+                  "endLine": 66,
+                  "endColumn": 61
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 63,
+                  "endLine": 75,
+                  "endColumn": 67
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8625",
+          "level": "warning",
+          "message": "Cannot convert null literal to non-nullable reference type.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 50,
+                  "endLine": 16,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Queries/Result/ContactMessageResponse.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 23,
+                  "endLine": 8,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Queries/Result/ContactMessageResponse.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 23,
+                  "endLine": 8,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Queries/Result/ContactMessageResponse.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 23,
+                  "endLine": 9,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Queries/Result/ContactMessageResponse.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 23,
+                  "endLine": 9,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Subject' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Queries/Result/ContactMessageResponse.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 23,
+                  "endLine": 10,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Queries/Result/ContactMessageResponse.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 23,
+                  "endLine": 10,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Message' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Queries/Result/ContactMessageResponse.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 23,
+                  "endLine": 11,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Queries/Result/ContactMessageResponse.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 23,
+                  "endLine": 11,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Specialization' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'PhoneNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Hospital' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ProfessionalBio' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'MedicalLicenseNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'IdentificationImage' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ProfileImage' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 23,
+                  "endLine": 23,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetSingleDoctorResponse.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 23,
+                  "endLine": 23,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Specialization' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'SubscriptionPlanNames' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 29,
+                  "endLine": 16,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 29,
+                  "endLine": 16,
+                  "endColumn": 50
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'MedicalLicenseNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ProfessionalBio' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'PhoneNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Hospital' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ImagePath' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 23,
+                  "endLine": 23,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 23,
+                  "endLine": 23,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ProfileImage' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 23,
+                  "endLine": 24,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorListResponse.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 23,
+                  "endLine": 24,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'DoctorName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllPostsResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllPostsResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'DoctorImage' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllPostsResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllPostsResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Specialization' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllPostsResponse.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllPostsResponse.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Content' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllPostsResponse.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllPostsResponse.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'PhoneNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Specialization' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'MedicaLicenseNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ProfessionalBio' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Hospital' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'IdentificationImage' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Queires/Result/GetDoctorByIdResponse.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'DoctorName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllCommentsRespone.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 23,
+                  "endLine": 12,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllCommentsRespone.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 23,
+                  "endLine": 12,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'DoctorImage' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllCommentsRespone.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllCommentsRespone.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Specialization' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllCommentsRespone.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllCommentsRespone.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Content' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllCommentsRespone.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Queries/Result/GetAllCommentsRespone.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponseByDoctor.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 23,
+                  "endLine": 12,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponseByDoctor.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 23,
+                  "endLine": 12,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponseByDoctor.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponseByDoctor.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponseByDoctor.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponseByDoctor.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientByIdResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientByIdResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientByIdResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientByIdResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientByIdResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientByIdResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Meta' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 16,
+                  "endLine": 12,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 23,
+                  "endLine": 40,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Message' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 16,
+                  "endLine": 12,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 42,
+                  "startColumn": 23,
+                  "endLine": 42,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Errors' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 16,
+                  "endLine": 12,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 29,
+                  "endLine": 43,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Data' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 16,
+                  "endLine": 12,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 18,
+                  "endLine": 44,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Meta' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 16,
+                  "endLine": 16,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 23,
+                  "endLine": 40,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Errors' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 16,
+                  "endLine": 16,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 29,
+                  "endLine": 43,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Meta' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 16,
+                  "endLine": 23,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 23,
+                  "endLine": 40,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Errors' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 16,
+                  "endLine": 23,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 29,
+                  "endLine": 43,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Data' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 16,
+                  "endLine": 23,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 18,
+                  "endLine": 44,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Meta' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 16,
+                  "endLine": 29,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 40,
+                  "startColumn": 23,
+                  "endLine": 40,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Errors' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 16,
+                  "endLine": 29,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 43,
+                  "startColumn": 29,
+                  "endLine": 43,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Data' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 16,
+                  "endLine": 29,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/Response.cs",
+                "region": {
+                  "startLine": 44,
+                  "startColumn": 18,
+                  "endLine": 44,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponse.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponse.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Queries/Result/GetPatientListResponse.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Name' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Commands/Model/SubmitContactMessageCommand.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 23,
+                  "endLine": 9,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Commands/Model/SubmitContactMessageCommand.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 23,
+                  "endLine": 9,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Commands/Model/SubmitContactMessageCommand.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 23,
+                  "endLine": 10,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Commands/Model/SubmitContactMessageCommand.cs",
+                "region": {
+                  "startLine": 10,
+                  "startColumn": 23,
+                  "endLine": 10,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Subject' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Commands/Model/SubmitContactMessageCommand.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 23,
+                  "endLine": 11,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Commands/Model/SubmitContactMessageCommand.cs",
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 23,
+                  "endLine": 11,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Message' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Commands/Model/SubmitContactMessageCommand.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 23,
+                  "endLine": 12,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Commands/Model/SubmitContactMessageCommand.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 23,
+                  "endLine": 12,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/AplicationUser/Command/Models/ChangeUserPasswordCommand.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/AplicationUser/Command/Models/ChangeUserPasswordCommand.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'CurrentPassword' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/AplicationUser/Command/Models/ChangeUserPasswordCommand.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/AplicationUser/Command/Models/ChangeUserPasswordCommand.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'NewPassword' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/AplicationUser/Command/Models/ChangeUserPasswordCommand.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/AplicationUser/Command/Models/ChangeUserPasswordCommand.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ConfirmPassword' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/AplicationUser/Command/Models/ChangeUserPasswordCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/AplicationUser/Command/Models/ChangeUserPasswordCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Command/Validation/AddPostValidator.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 35,
+                  "endLine": 28,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS0118",
+          "level": "error",
+          "message": "'Contact' is a namespace but is used like a type",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Contact/Commands/Handler/SubmitContactMessageHandler.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 42,
+                  "endLine": 35,
+                  "endColumn": 49
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/EditPatientCommand.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/EditPatientCommand.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/EditPatientCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/EditPatientCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Password' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/EditPatientCommand.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/EditPatientCommand.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/EditPatientCommand.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/EditPatientCommand.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8602",
+          "level": "warning",
+          "message": "Dereference of a possibly null reference.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Validation/EditDoctorValidator.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 31,
+                  "endLine": 52,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/AddPatientCommand.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/AddPatientCommand.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/AddPatientCommand.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/AddPatientCommand.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Password' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/AddPatientCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/AddPatientCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/AddPatientCommand.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Patients/Command/Model/AddPatientCommand.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/SignInCommand.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/SignInCommand.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 23,
+                  "endLine": 13,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Password' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/SignInCommand.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/SignInCommand.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Password' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ConfirmPassword' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'PhoneNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 23,
+                  "endLine": 20,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Hospital' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'MedicalLicenseNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 23,
+                  "endLine": 23,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 23,
+                  "endLine": 23,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Specialization' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 23,
+                  "endLine": 25,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 23,
+                  "endLine": 25,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 23,
+                  "endLine": 26,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 23,
+                  "endLine": 26,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'City' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 23,
+                  "endLine": 27,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 23,
+                  "endLine": 27,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'IdentificationImage' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 26,
+                  "endLine": 28,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 26,
+                  "endLine": 28,
+                  "endColumn": 45
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'ZipCode' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 23,
+                  "endLine": 29,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Authentication/Command/Models/RegisterDoctorCommand.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 23,
+                  "endLine": 29,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/AddDoctorCommand.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/AddDoctorCommand.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/AddDoctorCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/AddDoctorCommand.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/AddDoctorCommand.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/AddDoctorCommand.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Content' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Command/Model/AddCommentCommand.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Command/Model/AddCommentCommand.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 23,
+                  "endLine": 14,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'FullName' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 23,
+                  "endLine": 18,
+                  "endColumn": 31
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Email' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 23,
+                  "endLine": 19,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'PhoneNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 23,
+                  "endLine": 21,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Specialization' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 23,
+                  "endLine": 22,
+                  "endColumn": 37
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'MedicaLicenseNumber' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 23,
+                  "endLine": 23,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 23,
+                  "startColumn": 23,
+                  "endLine": 23,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS8618",
+          "level": "warning",
+          "message": "Non-nullable property 'Address' must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring the property as nullable.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 23,
+                  "endLine": 24,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "relatedLocations": [
+            {
+              "physicalLocation": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Doctors/Commands/Models/EditDoctorCommand.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 23,
+                  "endLine": 24,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CS4014",
+          "level": "warning",
+          "message": "Because this call is not awaited, execution of the current method continues before the call is completed. Consider applying the 'await' operator to the result of the call.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Mapping/DoctorMapp/DoctorProfiles.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 13,
+                  "endLine": 16,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'Deleted' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 28,
+                  "endLine": 17,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'Success' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 28,
+                  "endLine": 28,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'Unauthorized' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 39,
+                  "startColumn": 28,
+                  "endLine": 39,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'BadRequest' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 28,
+                  "endLine": 48,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'UnprocessableEntity' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 57,
+                  "startColumn": 28,
+                  "endLine": 57,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'NotFound' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 66,
+                  "startColumn": 28,
+                  "endLine": 66,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'Created' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Bases/ResponseHandler.cs",
+                "region": {
+                  "startLine": 75,
+                  "startColumn": 28,
+                  "endLine": 75,
+                  "endColumn": 35
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "CA1822",
+          "level": "note",
+          "message": "Member 'ApplyValidationRules' does not access instance data and can be marked as static",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/V%20I%20C%20T%20U%20S/Desktop/ThyroCareX/ThyroCareX-back/ThyroCareX.Core/Feature/Community/Command/Validation/AddPostLikeValidator.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 21,
+                  "endLine": 22,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CA1822": {
+          "id": "CA1822",
+          "shortDescription": "Mark members as static",
+          "fullDescription": "Members that do not access instance data or call instance methods can be marked as static. After you mark the methods as static, the compiler will emit nonvirtual call sites to these members. This can give you a measurable performance gain for performance-sensitive code.",
+          "defaultLevel": "note",
+          "helpUri": "https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822",
+          "properties": {
+            "category": "Performance",
+            "isEnabledByDefault": true,
+            "tags": [
+              "PortedFromFxCop",
+              "Telemetry",
+              "EnabledRuleInAggressiveMode"
+            ]
+          }
+        },
+        "CS0118": {
+          "id": "CS0118",
+          "defaultLevel": "error",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0118)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "CS4014": {
+          "id": "CS4014",
+          "shortDescription": "Because this call is not awaited, execution of the current method continues before the call is completed",
+          "fullDescription": "The current method calls an async method that returns a Task or a Task<TResult> and doesn't apply the await operator to the result. The call to the async method starts an asynchronous task. However, because no await operator is applied, the program continues without waiting for the task to complete. In most cases, that behavior isn't what you expect. Usually other aspects of the calling method depend on the results of the call or, minimally, the called method is expected to complete before you return from the method that contains the call.\u000d\u000a\u000d\u000aAn equally important issue is what happens to exceptions that are raised in the called async method. An exception that's raised in a method that returns a Task or Task<TResult> is stored in the returned task. If you don't await the task or explicitly check for exceptions, the exception is lost. If you await the task, its exception is rethrown.\u000d\u000a\u000d\u000aAs a best practice, you should always await the call.\u000d\u000a\u000d\u000aYou should consider suppressing the warning only if you're sure that you don't want to wait for the asynchronous call to complete and that the called method won't raise any exceptions. In that case, you can suppress the warning by assigning the task result of the call to a variable.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS4014)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8602": {
+          "id": "CS8602",
+          "shortDescription": "Dereference of a possibly null reference.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8602)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8618": {
+          "id": "CS8618",
+          "shortDescription": "Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8618)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "CS8625": {
+          "id": "CS8625",
+          "shortDescription": "Cannot convert null literal to non-nullable reference type.",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS8625)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

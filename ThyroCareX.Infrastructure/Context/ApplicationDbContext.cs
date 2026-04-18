@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
@@ -25,6 +25,7 @@ namespace ThyroCareX.Infrastructure.Context
         public DbSet<Comment> Comments { get; set; }
         public DbSet<PostLike> PostLikes { get; set; }
         public DbSet<Payment> Payments { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -84,7 +85,16 @@ namespace ThyroCareX.Infrastructure.Context
                 .HasIndex(pl => new { pl.PostId, pl.DoctorId })
                 .IsUnique();
 
+            modelBuilder.Entity<Plan>()
+                .Property(p => p.Features)
+                .HasConversion(
+                    v => System.Text.Json.JsonSerializer.Serialize(v, (System.Text.Json.JsonSerializerOptions)null),
+                    v => v.Trim().StartsWith("[") 
+                        ? (System.Text.Json.JsonSerializer.Deserialize<List<string>>(v, (System.Text.Json.JsonSerializerOptions)null) ?? new List<string>())
+                        : (string.IsNullOrEmpty(v) ? new List<string>() : new List<string> { v })
+                );
 
+            modelBuilder.Entity<Contact>().ToTable("ContactMessages");
         }
     }
 }
