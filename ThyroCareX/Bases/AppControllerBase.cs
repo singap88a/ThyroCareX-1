@@ -1,7 +1,7 @@
-﻿using Azure;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ThyroCareX.Core.Bases;
 using System.Net;
 
 namespace ThyroCareX.Bases
@@ -17,7 +17,7 @@ namespace ThyroCareX.Bases
         #region Actions
         public ObjectResult NewResult<T>(Response<T> response)
         {
-            switch (response.Value)
+            switch (response.StatusCode)
             {
                 case HttpStatusCode.OK:
                     return new OkObjectResult(response);

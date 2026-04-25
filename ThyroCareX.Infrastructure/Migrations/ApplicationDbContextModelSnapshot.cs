@@ -185,7 +185,7 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("ThyroCareX.Data.Models.ContactMessage", b =>
+            modelBuilder.Entity("ThyroCareX.Data.Models.Contact", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -223,7 +223,79 @@ namespace ThyroCareX.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactMessages");
+                    b.ToTable("ContactMessages", (string)null);
+                });
+
+            modelBuilder.Entity("ThyroCareX.Data.Models.DiagnosisResult", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BethesdaCategory")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BethesdaLabel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClassificationLabel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClinicalRecommendation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double?>("Confidence")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FnacRecommendation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FunctionalStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MalignancyRisk")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaskImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NextStep")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverlayImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("PatientId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RawResponse")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RiskLevel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoiImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TestId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TiradsStage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PatientId");
+
+                    b.HasIndex("TestId")
+                        .IsUnique();
+
+                    b.ToTable("DiagnosisResults");
                 });
 
             modelBuilder.Entity("ThyroCareX.Data.Models.Doctor", b =>
@@ -391,7 +463,7 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("ThyroCareX.Data.Models.MedicalRecord", b =>
+            modelBuilder.Entity("ThyroCareX.Data.Models.MedicalHistory", b =>
                 {
                     b.Property<int>("MedicalRecordID")
                         .ValueGeneratedOnAdd()
@@ -399,21 +471,19 @@ namespace ThyroCareX.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MedicalRecordID"));
 
+                    b.Property<string>("Allergies")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("AttachmentPath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Dignosis")
+                    b.Property<string>("History")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DoctorID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("DoctorID1")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Notes")
+                    b.Property<string>("Medications")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -425,55 +495,64 @@ namespace ThyroCareX.Infrastructure.Migrations
 
                     b.HasKey("MedicalRecordID");
 
-                    b.HasIndex("DoctorID");
-
-                    b.HasIndex("DoctorID1");
-
                     b.HasIndex("PatientID");
 
-                    b.ToTable("MedicalRecords");
+                    b.ToTable("MedicalHistory");
                 });
 
             modelBuilder.Entity("ThyroCareX.Data.Models.Patient", b =>
                 {
-                    b.Property<int>("PatientID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PatientID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AttachmentPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CurrentMedications")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int?>("DoctorID")
+                    b.Property<int>("DoctorID")
                         .HasColumnType("int");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Height")
+                        .HasColumnType("float");
+
+                    b.Property<string>("KnownAllergies")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("MedicalHistory")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("RegistrationAt")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("gender")
-                        .HasColumnType("int");
+                    b.Property<double>("Weight")
+                        .HasColumnType("float");
 
-                    b.HasKey("PatientID");
+                    b.HasKey("Id");
 
                     b.HasIndex("DoctorID");
 
@@ -636,6 +715,68 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.ToTable("SubscriptionPlans");
                 });
 
+            modelBuilder.Entity("ThyroCareX.Data.Models.Test", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("FTI")
+                        .HasColumnType("float");
+
+                    b.Property<string>("FnacImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("NodulePresent")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("OnThyroxine")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QueryHyperthyroid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("T3")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("T4U")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("TSH")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("TT4")
+                        .HasColumnType("float");
+
+                    b.Property<int>("ThyroidSurgery")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("Tests");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", null)
@@ -706,34 +847,38 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Navigation("Post");
                 });
 
+            modelBuilder.Entity("ThyroCareX.Data.Models.DiagnosisResult", b =>
+                {
+                    b.HasOne("ThyroCareX.Data.Models.Patient", null)
+                        .WithMany("DiagnosisResults")
+                        .HasForeignKey("PatientId");
+
+                    b.HasOne("ThyroCareX.Data.Models.Test", "Test")
+                        .WithOne("DiagnosisResult")
+                        .HasForeignKey("ThyroCareX.Data.Models.DiagnosisResult", "TestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Test");
+                });
+
             modelBuilder.Entity("ThyroCareX.Data.Models.Doctor", b =>
                 {
                     b.HasOne("ThyroCareX.Data.Models.Identity.User", "User")
                         .WithOne()
                         .HasForeignKey("ThyroCareX.Data.Models.Doctor", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ThyroCareX.Data.Models.MedicalRecord", b =>
+            modelBuilder.Entity("ThyroCareX.Data.Models.MedicalHistory", b =>
                 {
-                    b.HasOne("ThyroCareX.Data.Models.Doctor", "Doctor")
-                        .WithMany()
-                        .HasForeignKey("DoctorID")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("ThyroCareX.Data.Models.Doctor", null)
-                        .WithMany("MedicalRecords")
-                        .HasForeignKey("DoctorID1");
-
                     b.HasOne("ThyroCareX.Data.Models.Patient", "Patient")
-                        .WithMany("MedicalRecords")
+                        .WithMany("MedicalHistories")
                         .HasForeignKey("PatientID")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.Navigation("Doctor");
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Patient");
                 });
@@ -742,7 +887,9 @@ namespace ThyroCareX.Infrastructure.Migrations
                 {
                     b.HasOne("ThyroCareX.Data.Models.Doctor", "Doctor")
                         .WithMany("Patients")
-                        .HasForeignKey("DoctorID");
+                        .HasForeignKey("DoctorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Doctor");
                 });
@@ -805,11 +952,28 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Navigation("Plan");
                 });
 
+            modelBuilder.Entity("ThyroCareX.Data.Models.Test", b =>
+                {
+                    b.HasOne("ThyroCareX.Data.Models.Doctor", "Doctor")
+                        .WithMany("Tests")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("ThyroCareX.Data.Models.Patient", "Patient")
+                        .WithMany("Tests")
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
+                });
+
             modelBuilder.Entity("ThyroCareX.Data.Models.Doctor", b =>
                 {
                     b.Navigation("Comments");
-
-                    b.Navigation("MedicalRecords");
 
                     b.Navigation("Patients");
 
@@ -818,11 +982,17 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Navigation("Posts");
 
                     b.Navigation("SubscriptionPlans");
+
+                    b.Navigation("Tests");
                 });
 
             modelBuilder.Entity("ThyroCareX.Data.Models.Patient", b =>
                 {
-                    b.Navigation("MedicalRecords");
+                    b.Navigation("DiagnosisResults");
+
+                    b.Navigation("MedicalHistories");
+
+                    b.Navigation("Tests");
                 });
 
             modelBuilder.Entity("ThyroCareX.Data.Models.Post", b =>
@@ -830,6 +1000,12 @@ namespace ThyroCareX.Infrastructure.Migrations
                     b.Navigation("Comments");
 
                     b.Navigation("PostLikes");
+                });
+
+            modelBuilder.Entity("ThyroCareX.Data.Models.Test", b =>
+                {
+                    b.Navigation("DiagnosisResult")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ThyroCareX.Core.Feature.Contact.Command.Hadler
+namespace ThyroCareX.Service.Abstarct
 {
-    public class ContactHandler
+    public interface ITestProcessingJob
     {
+        Task ProcessAsync(int testId);
+
     }
 }

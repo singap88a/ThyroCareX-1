@@ -17,6 +17,8 @@ namespace ThyroCareX.Infrastructure
             services.AddScoped<IContactRepo, ContactRepo>();
             services.AddScoped<IPlanRepo, PlanRepo>();
             services.AddScoped<ISubscriptionPlanRepo, SubscriptionPlanRepo>();
+            services.AddScoped<IMedicalHistoryRepo, MedicalHistoryRep>();
+            services.AddScoped<ITestRepo, TestRepo>();
 
 
             services.AddScoped(typeof(IGenericRepositoryAsync<>), typeof(GenericRepositoryAsync<>));

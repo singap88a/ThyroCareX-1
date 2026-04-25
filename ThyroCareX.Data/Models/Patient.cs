@@ -1,29 +1,38 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using ThyroCareX.Data.Enums;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ThyroCareX.Data.Models
 {
     public class Patient
     {
-        public Patient()
-        {
-            MedicalRecords = new HashSet<MedicalRecord>();
-        }
-        [Key]
-        public int PatientID { get; set; }
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public Gender gender { get; set; }
-        public int Age { get; set; }
-        public int PhoneNumber { get; set; }
-        public string Address { get; set; }
-        public DateTime RegistrationAt { get; set; } = DateTime.UtcNow;
-        public int? DoctorID { get; set; }
-        [ForeignKey("DoctorID")]
-        public Doctor? Doctor { get; set; }
-        public virtual ICollection<MedicalRecord> MedicalRecords { get; set; }
+        
+        public int Id { get;  set; }
+
+        public string FullName { get;  set; }
+        public DateTime DateOfBirth { get;  set; }
+        public Gender Gender { get;  set; }
+
+        public double Height { get;  set; }
+        public double Weight { get;  set; }
+
+        public string PhoneNumber { get;  set; }
+        public string? Address { get;  set; }
+        public string MedicalHistory { get;  set; } = string.Empty;
+        public string CurrentMedications { get;  set; } = string.Empty;
+        public string KnownAllergies { get;  set; } = string.Empty;
+        public string? AttachmentPath { get; set; } = string.Empty;
+        public DateTime CreatedAt { get;  set; }
+
+        public int DoctorID { get;  set; }
+            [ForeignKey("DoctorID")]
+        public Doctor? Doctor { get;  set; }
+
+        public ICollection<MedicalHistory> MedicalHistories { get;  set; } = new List<MedicalHistory>();
+        public ICollection<DiagnosisResult> DiagnosisResults { get;  set; } = new List<DiagnosisResult>();
+        public ICollection<Test> Tests { get;  set; } = new List<Test>();
+      
 
     }
 }

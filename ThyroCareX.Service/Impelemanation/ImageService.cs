@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using ThyroCareX.Service.Abstarct;
 using static System.Net.Mime.MediaTypeNames;
-using SkiaSharp;
 
 
 namespace ThyroCareX.Service.Impelemanation
@@ -14,11 +16,14 @@ namespace ThyroCareX.Service.Impelemanation
     {
         private readonly string _baseRootPath;
         private readonly string _wwwroot;
+        private readonly IWebHostEnvironment _env;
 
-        public ImageService(string rootPath)
+
+        public ImageService(IWebHostEnvironment env)
         {
-            _wwwroot = rootPath;
-            _baseRootPath = Path.Combine(rootPath, "uploads");
+            _env = env;
+            _wwwroot = env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            _baseRootPath = Path.Combine(_wwwroot, "uploads");
 
             if (!Directory.Exists(_baseRootPath))
                 Directory.CreateDirectory(_baseRootPath);
@@ -62,6 +67,45 @@ namespace ThyroCareX.Service.Impelemanation
 
             if (File.Exists(fullPath))
                 File.Delete(fullPath);
+        }
+
+        public async Task<string> UploadFileAsync(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                throw new ArgumentException("File is required");
+
+            var folderPath = Path.Combine(_env.WebRootPath ?? "wwwroot", "uploads");
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+
+            var extension = Path.GetExtension(file.FileName);
+            var fileName = $"{Guid.NewGuid()}{extension}";
+            var fullPath = Path.Combine(folderPath, fileName);
+
+            using var stream = new FileStream(fullPath, FileMode.Create);
+            await file.CopyToAsync(stream);
+
+            return $"/uploads/{fileName}";
+        }
+
+        public async Task DeleteFileAsync(string fileUrl)
+        {
+            if (string.IsNullOrEmpty(fileUrl)) return;
+
+            try
+            {
+                var relativePath = fileUrl.TrimStart('/');
+                var fullPath = Path.Combine(_env.WebRootPath ?? "wwwroot", relativePath);
+
+                if (File.Exists(fullPath))
+                {
+                    await Task.Run(() => File.Delete(fullPath));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting file: {ex.Message}");
+            }
         }
 
     }

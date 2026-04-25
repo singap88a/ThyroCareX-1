@@ -18,7 +18,7 @@ namespace ThyroCareX.Infrastructure.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Patient> Patients { get; set; }
-        public DbSet<MedicalRecord> MedicalRecords { get; set; }
+        public DbSet<MedicalHistory> MedicalHistory { get; set; }
         public DbSet<SubscriptionPlan> SubscriptionPlans { get; set; }
        public DbSet<Plan> Plans { get; set; }
         public DbSet<Post> Posts { get; set; }
@@ -26,6 +26,9 @@ namespace ThyroCareX.Infrastructure.Context
         public DbSet<PostLike> PostLikes { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Test> Tests { get; set; }
+        public DbSet<DiagnosisResult> DiagnosisResults { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -59,27 +62,40 @@ namespace ThyroCareX.Infrastructure.Context
       
 
             // منع الـ Cascade Delete بين MedicalRecord و Patient
-            modelBuilder.Entity<MedicalRecord>()
+            modelBuilder.Entity<MedicalHistory>()
                .HasOne(m => m.Patient)
-               .WithMany(p => p.MedicalRecords)
+               .WithMany(u=>u.MedicalHistories)
                .HasForeignKey(m => m.PatientID)
-               .OnDelete(DeleteBehavior.Restrict);
+               .OnDelete(DeleteBehavior.NoAction);
 
             // (اختياري) تأكد كمان إن علاقة MedicalRecord مع Doctor مش بتعمل Cascade
-            modelBuilder.Entity<MedicalRecord>()
-                .HasOne(m => m.Doctor)
-                .WithMany()
-                .HasForeignKey(m => m.DoctorID)
-                .OnDelete(DeleteBehavior.Restrict);
+           
 
             // إعداد علاقة 1-1 بين Doctor و User مع Cascade Delete
            modelBuilder.Entity<Doctor>()
             .HasOne(d => d.User)
             .WithOne() // كل User ممكن يكون له Doctor واحد
             .HasForeignKey<Doctor>(d => d.UserId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Test>()
+            .HasOne(t => t.Patient)
+            .WithMany(p => p.Tests)
+            .HasForeignKey(t => t.PatientId)
             .OnDelete(DeleteBehavior.Cascade);
 
-            
+            modelBuilder.Entity<Test>()
+                .HasOne(t => t.Doctor)
+                .WithMany(d => d.Tests)
+                .HasForeignKey(t => t.DoctorId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<DiagnosisResult>()
+                .HasOne(d => d.Test)
+                .WithOne(t => t.DiagnosisResult)
+                .HasForeignKey<DiagnosisResult>(d => d.TestId)
+                .OnDelete(DeleteBehavior.Cascade);
+
 
             modelBuilder.Entity<PostLike>()
                 .HasIndex(pl => new { pl.PostId, pl.DoctorId })

@@ -19,12 +19,14 @@ namespace ThyroCareX.Service
             services.AddScoped<ICommentService, CommentService>();
             services.AddScoped<IPostLikeService, PostLikeService>();
             services.AddScoped<IPlanService, PlanService>();
-            services.AddHttpClient<IPaymentService, PayMobService>();
-            services.AddScoped<IImageService>(sp =>
-            {
-                var env = sp.GetRequiredService<IWebHostEnvironment>();
-                return new ImageService(env.WebRootPath);
-            });
+            services.AddScoped<IPaymentService, PayMobService>();
+            services.AddScoped<IMedicalHistoryServices, MedicalHistoryService>();
+            services.AddScoped<ITestService, TestService>();
+            services.AddScoped<ITestProcessingJob, TestProcessingJob>();
+            services.AddHttpClient<IAIService, AIService>();
+
+            services.AddScoped<IImageService,ImageService>();
+            
             
             return services;
         }

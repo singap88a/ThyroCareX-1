@@ -8,6 +8,8 @@ using ThyroCareX.Service;
 using Microsoft.AspNetCore.Identity;
 using ThyroCareX.Data.Healpers;
 using ThyroCareX.Data.Models.Identity;
+using Hangfire;
+using Hangfire.SqlServer;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +17,23 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString"));
 });
+
+// Add Hangfire services.
+builder.Services.AddHangfire(configuration => configuration
+    .SetDataCompatibilityLevel(CompatibilityLevel.Version_180)
+    .UseSimpleAssemblyNameTypeSerializer()
+    .UseRecommendedSerializerSettings()
+    .UseSqlServerStorage(builder.Configuration.GetConnectionString("DefaultConnectionString"), new SqlServerStorageOptions
+    {
+        CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
+        SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
+        QueuePollInterval = TimeSpan.Zero,
+        UseRecommendedIsolationLevel = true,
+        DisableGlobalLocks = true
+    }));
+
+// Add the processing server as IHostedService
+builder.Services.AddHangfireServer();
 
 
 // Add Serilog
@@ -60,15 +79,7 @@ app.UseSwaggerUI(c =>
 
 
 app.UseHttpsRedirection();
-//app.Use(async (context, next) =>
-//{
-//    var host = context.Request.Host.Host;
-//    var validHosts = builder.Configuration.GetSection("Stripe:WebhookHosts").Get<string[]>();
-//    if (!validHosts.Any(h => host.EndsWith(h)))
-//        context.Response.StatusCode = 403;
-//    else
-//        await next();
-//});
+
 app.UseRouting();
 app.UseCors(CORS);
 app.UseStaticFiles();
@@ -86,5 +97,7 @@ using (var scope = app.Services.CreateScope())
 #endregion
 
 app.MapControllers();
+
+app.UseHangfireDashboard("/hangfire"); // Optional: adds a dashboard at /hangfire
 
 app.Run();

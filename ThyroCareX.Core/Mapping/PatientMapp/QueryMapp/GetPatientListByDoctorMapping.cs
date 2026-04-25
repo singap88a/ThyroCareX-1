@@ -13,7 +13,7 @@ namespace ThyroCareX.Core.Mapping.PatientMapp
         public void GetPatientListByDoctorMapping()
         {
             CreateMap<Patient, GetPatientListResponseByDoctor>()
-                .ForMember(dest => dest.PatientID, opt => opt.MapFrom(src => src.PatientID));
+                .ForMember(dest => dest.PatientID, opt => opt.MapFrom(src => src.Id));
                 
                
         }

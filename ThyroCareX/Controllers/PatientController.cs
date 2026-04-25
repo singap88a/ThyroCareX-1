@@ -30,11 +30,14 @@ namespace ThyroCareX.Controllers
             var Response = await Mediator.Send(new GetPatientByIdQuery(id));
             return Ok(Response);
         }
+        [Authorize(Roles = "Doctor")]
         [HttpPost("AddPatient")]
-        public async Task<IActionResult> AddPatient([FromBody]AddPatientCommand command)
+        public async Task<IActionResult> AddPatient([FromForm]AddPatientCommand command)
         {
             var Response = await Mediator.Send(command);
             return Ok(Response);
+
+       
         }
         [HttpPut("EditPatient/{Id}")]
         public async Task<IActionResult> EditPatient([FromRoute] int Id, [FromBody] EditPatientCommand command)

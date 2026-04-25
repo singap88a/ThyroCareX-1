@@ -17,26 +17,44 @@ namespace ThyroCareX.Core.Feature.Patients.Command.Handler
     {
         #region Fields
         private readonly IPatientService _patientService;
+        private readonly IDoctorService _doctorService;
+        private readonly IUserContextService _userContextService;
+
         private readonly IMapper _mapper;
         #endregion
         #region Constructor
-        public PatientCommandHandler(IPatientService patientService, IMapper mapper)
+        public PatientCommandHandler(IPatientService patientService, IUserContextService userContextService,IMapper mapper, IDoctorService doctorService)
         {
 
             _patientService = patientService;
+            _doctorService = doctorService;
             _mapper = mapper;
+            _userContextService = userContextService;
         }
 
         #endregion
         #region Handle Functions
         public async Task<Response<string>> Handle(AddPatientCommand request, CancellationToken cancellationToken)
         {
-            // Map the Requst to Patient entity
-            var PatientMapper = _mapper.Map<Patient>(request);
-            // Call the Service to Add Patient
-            var result = await _patientService.AddAsync(PatientMapper);
-            // Return Response
+            var userIdString = _userContextService.UserId;
+
+            if (string.IsNullOrEmpty(userIdString))
+                return new Response<string>("Unauthorized");
+
+            if (!int.TryParse(userIdString, out var userId))
+                return new Response<string>("Invalid UserId");
+
+            var doctor = await _doctorService.GetDoctorByUserIdAsync(userId);
+            var patient = _mapper.Map<Patient>(request);
+            patient.DoctorID= doctor.DoctorID;
+
+
+            var result = await _patientService.AddAsync(patient);
             return Success(result);
+
+
+
+
 
 
         }

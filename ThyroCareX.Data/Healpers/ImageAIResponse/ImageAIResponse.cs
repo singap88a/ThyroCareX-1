@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+
+namespace ThyroCareX.Core.Dto.ImageAIResponse
+{
+    public class ImageAIResponse
+    {
+        public string Status { get; set; }
+
+        public List<int>? Bbox { get; set; }
+
+        public ClassificationDto Classification { get; set; }
+
+        public ImageUrlsDto Images { get; set; }
+
+        public string? Message { get; set; }
+    }
+
+    public class ClassificationDto
+    {
+        public int Prediction { get; set; }
+
+        public string Label { get; set; }
+
+        [JsonPropertyName("confidence_pct")]
+        public double Confidence { get; set; }
+
+        [JsonPropertyName("acr_tirads_level")]
+        public string Tirads_Stage { get; set; }
+
+        [JsonPropertyName("risk_level")]
+        public string RiskLevel { get; set; }
+
+        [JsonPropertyName("clinical_recommendation")]
+        public string ClinicalRecommendation { get; set; }
+    }
+
+    public class ImageUrlsDto
+    {
+        [JsonPropertyName("mask_url")]
+        public string Mask_Url { get; set; }
+
+        [JsonPropertyName("overlay_url")]
+        public string Overlay_Url { get; set; }
+
+        [JsonPropertyName("roi_url")]
+        public string Roi_Url { get; set; }
+    }
+}

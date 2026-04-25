@@ -20,20 +20,40 @@ namespace ThyroCareX.Core.Feature.Patients.Command.Validation
         public void ApplyValidationRules()
         {
             RuleFor(x => x.FullName)
-                .NotEmpty().WithMessage("Full Name is required.")
-                .MaximumLength(100).WithMessage("Full Name cannot exceed 100 characters.");
+              .NotEmpty().WithMessage("Full name is required")
+              .MaximumLength(100).WithMessage("Full name must not exceed 100 characters");
 
-            RuleFor(x => x.Email)
-                .NotEmpty().WithMessage("Email is required.")
-                .EmailAddress().WithMessage("A valid email is required.");
+            // Date Of Birth
+            RuleFor(x => x.DateOfBirth)
+                .NotEmpty().WithMessage("Date of birth is required")
+                .LessThan(DateTime.Now).WithMessage("Date of birth must be in the past");
 
-            RuleFor(x => x.Password)
-                .NotEmpty().WithMessage("Password is required.")
-                .MinimumLength(6).WithMessage("Password must be at least 6 characters long.")
-               .Matches("[A-Z]").WithMessage("Password must contain at least one uppercase letter.")
-               .Matches("[a-z]").WithMessage("Password must contain at least one lowercase letter.")
-               .Matches("[0-9]").WithMessage("Password must contain at least one digit.")
-               .Matches("[^a-zA-Z0-9]").WithMessage("Password must contain at least one special character.");
+            // Gender
+            RuleFor(x => x.Gender)
+                .NotEmpty().WithMessage("Gender is required");
+
+            // Height
+            RuleFor(x => x.Height)
+                .GreaterThan(0).WithMessage("Height must be greater than 0");
+
+            // Weight
+            RuleFor(x => x.Weight)
+                .GreaterThan(0).WithMessage("Weight must be greater than 0");
+
+            // Phone Number
+            RuleFor(x => x.PhoneNumber)
+                .NotEmpty().WithMessage("Phone number is required")
+                .Matches(@"^01[0-2,5]{1}[0-9]{8}$")
+                .WithMessage("Invalid Egyptian phone number format");
+              
+
+            // Address
+            RuleFor(x => x.Address)
+                .MaximumLength(250).WithMessage("Address too long");
+
+            // Attachment
+            //RuleFor(x => x.AttachmentPath)
+            //    .NotEmpty().WithMessage("Attachment is required");
         }
 
     }
