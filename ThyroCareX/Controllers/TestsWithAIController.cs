@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ThyroCareX.Bases;
 using ThyroCareX.Core.Feature.TestWithAI.Commands.Models;
+using ThyroCareX.Data.Healpers.ClinicalAI;
 
 namespace ThyroCareX.Controllers
 {
@@ -11,31 +12,26 @@ namespace ThyroCareX.Controllers
     [Authorize(Roles = "Doctor")]
     public class TestsWithAIController : AppControllerBase
     {
-        [HttpPost("AddTest")]
-        public async Task<IActionResult> AddTest([FromForm] AddTestCommand command)
+    
+
+        [HttpPost("ProcessImage")]
+        public async Task<IActionResult> ProcessImage([FromForm] PredictImageCommand command)
         {
             var response = await Mediator.Send(command);
             return Ok(response);
         }
 
-        [HttpPost("ProcessImage/{testId}")]
-        public async Task<IActionResult> ProcessImage(int testId)
+        [HttpPost("ProcessClinical")]
+        public async Task<IActionResult> ProcessClinical([FromBody] ClinicalRequest request)
         {
-            var response = await Mediator.Send(new PredictImageCommand { TestId = testId });
+            var response = await Mediator.Send(new AssessClinicalCommand(request));
             return Ok(response);
         }
 
-        [HttpPost("ProcessClinical/{testId}")]
-        public async Task<IActionResult> ProcessClinical(int testId)
+        [HttpPost("ProcessFnac")]
+        public async Task<IActionResult> ProcessFnac([FromForm]PredictFnacCommand command)
         {
-            var response = await Mediator.Send(new AssessClinicalCommand { TestId = testId });
-            return Ok(response);
-        }
-
-        [HttpPost("ProcessFnac/{testId}")]
-        public async Task<IActionResult> ProcessFnac(int testId)
-        {
-            var response = await Mediator.Send(new PredictFnacCommand { TestId = testId });
+            var response = await Mediator.Send(command);
             return Ok(response);
         }
     }

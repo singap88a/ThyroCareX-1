@@ -107,5 +107,33 @@ namespace ThyroCareX.Service.Impelemanation
 
             return await response.Content.ReadFromJsonAsync<FnacAIResponse>();
         }
+        public async Task<bool> ValidateUltrasoundAsync(string imagePath)
+        {
+            var fullPath = Path.Combine(_env.WebRootPath ?? "wwwroot", imagePath.TrimStart('/'));
+
+            using var form = new MultipartFormDataContent();
+            var fileBytes = await File.ReadAllBytesAsync(fullPath);
+            var byteContent = new ByteArrayContent(fileBytes);
+
+            var extension = Path.GetExtension(fullPath).ToLower();
+            byteContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(
+                extension == ".png" ? "image/png" : "image/jpeg"
+            );
+
+            form.Add(byteContent, "file", Path.GetFileName(fullPath));
+
+            var response = await _httpClient.PostAsync(
+                "https://amer003100-thyraxcdss.hf.space/image/validate",
+                form
+            );
+
+            if (!response.IsSuccessStatusCode)
+                return false;
+
+            var result = await response.Content.ReadFromJsonAsync<dynamic>();
+
+            return result?.is_ultrasound == true;
+        }
+
     }
 }

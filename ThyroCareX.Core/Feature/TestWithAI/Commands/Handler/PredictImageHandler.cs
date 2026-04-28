@@ -1,9 +1,12 @@
 using MediatR;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using ThyroCareX.Core.Bases;
 using ThyroCareX.Core.Dto.ImageAIResponse;
 using ThyroCareX.Core.Feature.TestWithAI.Commands.Models;
+using ThyroCareX.Data.Enums;
 using ThyroCareX.Data.Models;
 using ThyroCareX.Service.Abstarct;
+using ThyroCareX.Service.Impelemanation;
 
 namespace ThyroCareX.Core.Feature.TestWithAI.Commands.Handler
 {
@@ -11,11 +14,14 @@ namespace ThyroCareX.Core.Feature.TestWithAI.Commands.Handler
     {
         private readonly ITestService _testService;
         private readonly IAIService _aiService;
+        private readonly IImageService _imageService;
+        
 
-        public PredictImageHandler(ITestService testService, IAIService aiService)
+        public PredictImageHandler(ITestService testService, IAIService aiService, IImageService imageService)
         {
             _testService = testService;
             _aiService = aiService;
+            _imageService = imageService;
         }
 
         public async Task<Response<ImageAIResponse>> Handle(PredictImageCommand request, CancellationToken cancellationToken)
@@ -23,39 +29,48 @@ namespace ThyroCareX.Core.Feature.TestWithAI.Commands.Handler
             var test = await _testService.GetTestByIdAsync(request.TestId);
             if (test == null) return NotFound<ImageAIResponse>("Test not found");
 
-            if (string.IsNullOrEmpty(test.ImagePath))
-                return BadRequest<ImageAIResponse>("No ultrasound image found for this test");
+           
+
+            test.ImagePath = await _imageService.UploadFileAsync(request.UltraSoundImage);
+                    test.Status = TestStatus.Processing;
+                    await _testService.UpdateTestAsync(test);
+
+            var isValid = await _aiService.ValidateUltrasoundAsync(test.ImagePath);
+
+            if (!isValid)
+            {
+                test.Status = TestStatus.Failed;
+                await _testService.UpdateTestAsync(test);
+
+                return BadRequest<ImageAIResponse>("Uploaded image is not a valid ultrasound image");
+            }
 
             var aiResponse = await _aiService.PredictImageAsync(test.ImagePath);
+
             if (aiResponse == null || aiResponse.Status != "success")
                 return BadRequest<ImageAIResponse>("AI Service failed to process the image");
 
             var diagnosis = await _testService.GetDiagnosisByTestIdAsync(request.TestId);
+
             if (diagnosis == null)
             {
-                diagnosis = new DiagnosisResult
-                {
-                    TestId = request.TestId,
-                    ClassificationLabel = aiResponse.Classification.Label,
-                    Confidence = aiResponse.Classification.Confidence,
-                    TiradsStage = aiResponse.Classification.Tirads_Stage,
-                    OverlayImageUrl = aiResponse.Images.Overlay_Url,
-                    MaskImageUrl = aiResponse.Images.Mask_Url,
-                    RoiImageUrl = aiResponse.Images.Roi_Url
-                };
-                await _testService.SaveDiagnosisAsync(diagnosis);
-            }
-            else
-            {
-                diagnosis.ClassificationLabel = aiResponse.Classification.Label;
-                diagnosis.Confidence = aiResponse.Classification.Confidence;
-                diagnosis.TiradsStage = aiResponse.Classification.Tirads_Stage;
-                diagnosis.OverlayImageUrl = aiResponse.Images.Overlay_Url;
-                diagnosis.MaskImageUrl = aiResponse.Images.Mask_Url;
-                diagnosis.RoiImageUrl = aiResponse.Images.Roi_Url;
-                await _testService.UpdateDiagnosisAsync(diagnosis);
+                diagnosis = new DiagnosisResult { TestId = request.TestId };
             }
 
+            diagnosis.ClassificationLabel = aiResponse.Classification.Label;
+            diagnosis.Confidence = aiResponse.Classification.Confidence;
+            diagnosis.TiradsStage = aiResponse.Classification.Tirads_Stage;
+            diagnosis.OverlayImageUrl = aiResponse.Images.Overlay_Url;
+            diagnosis.MaskImageUrl = aiResponse.Images.Mask_Url;
+            diagnosis.RoiImageUrl = aiResponse.Images.Roi_Url;
+
+            if (diagnosis.Id == 0)
+                await _testService.SaveDiagnosisAsync(diagnosis);
+            else
+                await _testService.UpdateDiagnosisAsync(diagnosis);
+
+            test.Status = TestStatus.Completed;
+            await _testService.UpdateTestAsync(test);
             return Success(aiResponse);
         }
     }

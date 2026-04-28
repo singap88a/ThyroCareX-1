@@ -15,5 +15,6 @@ namespace ThyroCareX.Service.Abstarct
         Task<ImageAIResponse> PredictImageAsync(string imagePath);
         Task<ClinicalAIResponse> AssessClinicalAsync(ClinicalRequest request);
         Task<FnacAIResponse> PredictFnacAsync(string imagePath);
+        Task<bool> ValidateUltrasoundAsync(string imagePath);
     }
 }
