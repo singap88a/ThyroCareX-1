@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +12,13 @@ namespace ThyroCareX.Core.Mapping.PatientMapp
     {
         private void GetPatientByIdMapping()
         {
-            CreateMap<Patient, GetPatientByIdResponse>();
-
-               
+            CreateMap<Patient, GetPatientByIdResponse>()
+                .ForMember(dest => dest.PatientID, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.RegistrationAt, opt => opt.MapFrom(src => src.CreatedAt))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src =>
+                    src.DateOfBirth == default
+                        ? 0
+                        : (int)((DateTime.UtcNow - src.DateOfBirth).TotalDays / 365.25)));
         }
     }
 }

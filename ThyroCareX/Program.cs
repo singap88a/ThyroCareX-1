@@ -50,7 +50,11 @@ builder.Services.AddInfrastructureDependencies()
                 .AddServiceRegisteration(builder.Configuration); ;
 #endregion
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+    });
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
 var CORS = "_cors";
@@ -61,7 +65,10 @@ builder.Services.AddCors(options =>
                       {
                           policy.AllowAnyHeader();
                           policy.AllowAnyMethod();
-                          policy.WithOrigins("https://thyro-care-x-6jdn.vercel.app");
+                          policy.WithOrigins("https://thyro-care-x-6jdn.vercel.app", 
+                                            "http://localhost:5173", 
+                                            "http://localhost:5174", 
+                                            "http://localhost:5175");
                       });
 });
 

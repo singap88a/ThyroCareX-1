@@ -26,16 +26,37 @@ namespace ThyroCareX.Core.Feature.TestWithAI.Commands.Handler
 
         public async Task<Response<ImageAIResponse>> Handle(PredictImageCommand request, CancellationToken cancellationToken)
         {
+            if (request.UltraSoundImage == null || request.UltraSoundImage.Length == 0)
+            {
+                return BadRequest<ImageAIResponse>("Ultrasound image is required");
+            }
+
             var test = await _testService.GetTestByIdAsync(request.TestId);
             if (test == null) return NotFound<ImageAIResponse>("Test not found");
 
-           
+            try
+            {
+                test.ImagePath = await _imageService.UploadFileAsync(request.UltraSoundImage);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest<ImageAIResponse>($"Failed to upload ultrasound image: {ex.Message}");
+            }
 
-            test.ImagePath = await _imageService.UploadFileAsync(request.UltraSoundImage);
-                    test.Status = TestStatus.Processing;
-                    await _testService.UpdateTestAsync(test);
+            test.Status = TestStatus.Processing;
+            await _testService.UpdateTestAsync(test);
 
-            var isValid = await _aiService.ValidateUltrasoundAsync(test.ImagePath);
+            bool isValid;
+            try
+            {
+                isValid = await _aiService.ValidateUltrasoundAsync(test.ImagePath);
+            }
+            catch (Exception ex)
+            {
+                test.Status = TestStatus.Failed;
+                await _testService.UpdateTestAsync(test);
+                return BadRequest<ImageAIResponse>($"Ultrasound validation failed: {ex.Message}");
+            }
 
             if (!isValid)
             {
@@ -45,7 +66,17 @@ namespace ThyroCareX.Core.Feature.TestWithAI.Commands.Handler
                 return BadRequest<ImageAIResponse>("Uploaded image is not a valid ultrasound image");
             }
 
-            var aiResponse = await _aiService.PredictImageAsync(test.ImagePath);
+            ImageAIResponse aiResponse;
+            try
+            {
+                aiResponse = await _aiService.PredictImageAsync(test.ImagePath);
+            }
+            catch (Exception ex)
+            {
+                test.Status = TestStatus.Failed;
+                await _testService.UpdateTestAsync(test);
+                return BadRequest<ImageAIResponse>($"Image prediction failed: {ex.Message}");
+            }
 
             if (aiResponse == null || aiResponse.Status != "success")
                 return BadRequest<ImageAIResponse>("AI Service failed to process the image");
@@ -63,6 +94,7 @@ namespace ThyroCareX.Core.Feature.TestWithAI.Commands.Handler
             diagnosis.OverlayImageUrl = aiResponse.Images.Overlay_Url;
             diagnosis.MaskImageUrl = aiResponse.Images.Mask_Url;
             diagnosis.RoiImageUrl = aiResponse.Images.Roi_Url;
+            diagnosis.RawResponse = System.Text.Json.JsonSerializer.Serialize(aiResponse);
 
             if (diagnosis.Id == 0)
                 await _testService.SaveDiagnosisAsync(diagnosis);
