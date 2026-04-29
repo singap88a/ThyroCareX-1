@@ -14,7 +14,7 @@ namespace ThyroCareX.Core.Feature.Patients.Queries.Result
         public string Email { get; set; }
         public Gender gender { get; set; }
         public int Age { get; set; }
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public DateTime RegistrationAt { get; set; } = DateTime.UtcNow;
         public int? DoctorID { get; set; }

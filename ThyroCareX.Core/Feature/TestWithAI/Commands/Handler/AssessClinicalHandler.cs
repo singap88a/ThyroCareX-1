@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using MediatR;
 using ThyroCareX.Core.Bases;
 using ThyroCareX.Core.Dto;
@@ -45,6 +45,11 @@ namespace ThyroCareX.Core.Feature.TestWithAI.Commands.Handler
 
 
 
+            // Normalize inputs for AI (ensure 0 or 1)
+            request.ClinicalRequest.OnThyroxine = request.ClinicalRequest.OnThyroxine > 0 ? 1 : 0;
+            request.ClinicalRequest.ThyroidSurgery = request.ClinicalRequest.ThyroidSurgery > 0 ? 1 : 0;
+            request.ClinicalRequest.QueryHyperthyroid = request.ClinicalRequest.QueryHyperthyroid > 0 ? 1 : 0;
+
             var test = new Test
             {
                 PatientId = request.ClinicalRequest.PatientId,
@@ -63,39 +68,53 @@ namespace ThyroCareX.Core.Feature.TestWithAI.Commands.Handler
 
             await _testService.AddTestAsync(test);
 
-            // 🧠 1. Call AI
-            var aiResponse = await _aiService.AssessClinicalAsync(request.ClinicalRequest);
-
-            // 💾 2. Save Diagnosis
-            var diagnosis = new DiagnosisResult
+            try 
             {
-                TestId = test.Id,
-                FunctionalStatus = aiResponse.FunctionalStatus,
-                RiskLevel = aiResponse.RiskLevel,
-                ClinicalRecommendation = aiResponse.ClinicalRecommendation,
-                NextStep = aiResponse.NextStep
-            };
+                // 🧠 1. Call AI
+                var aiResponse = await _aiService.AssessClinicalAsync(request.ClinicalRequest);
 
-            await _testService.SaveDiagnosisAsync(diagnosis);
-
-            test.Status = TestStatus.Completed;
-            await _testService.UpdateTestAsync(test);
-            // 🎯 Mapping Response
-            var response = new AssessClinicalResponse
-            {
-                TestId = test.Id,
-                Status = aiResponse.Status,
-                Clinical = new ClinicalResultDto
+                // 💾 2. Save Diagnosis
+                var diagnosis = new DiagnosisResult
                 {
+                    TestId = test.Id,
                     FunctionalStatus = aiResponse.FunctionalStatus,
                     RiskLevel = aiResponse.RiskLevel,
                     ClinicalRecommendation = aiResponse.ClinicalRecommendation,
                     NextStep = aiResponse.NextStep,
-                    Probabilities = aiResponse.Probabilities
-                }
-            };
+                    RawResponse = System.Text.Json.JsonSerializer.Serialize(aiResponse)
+                };
 
-            return Success(response);
+                await _testService.SaveDiagnosisAsync(diagnosis);
+
+                test.Status = TestStatus.Completed;
+                await _testService.UpdateTestAsync(test);
+                
+                // 🎯 Mapping Response
+                var response = new AssessClinicalResponse
+                {
+                    TestId = test.Id,
+                    Status = aiResponse.Status,
+                    Clinical = new ClinicalResultDto
+                    {
+                        FunctionalStatus = aiResponse.FunctionalStatus,
+                        RiskLevel = aiResponse.RiskLevel,
+                        ClinicalRecommendation = aiResponse.ClinicalRecommendation,
+                        AiRecommendation = aiResponse.AiRecommendation,
+                        ModelConfidence = aiResponse.ModelConfidence,
+                        NeedsManualReview = aiResponse.NeedsManualReview,
+                        NextStep = aiResponse.NextStep,
+                        Probabilities = aiResponse.Probabilities
+                    }
+                };
+
+                return Success(response);
+            }
+            catch (Exception ex)
+            {
+                test.Status = TestStatus.Failed;
+                await _testService.UpdateTestAsync(test);
+                return BadRequest<AssessClinicalResponse>($"AI Service Error: {ex.Message}");
+            }
         }
        
 
