@@ -11,6 +11,7 @@ using ThyroCareX.Core.Dto.FnacAIResponse;
 using ThyroCareX.Core.Dto.ImageAIResponse;
 using ThyroCareX.Data.Healpers.ClinicalAI;
 using ThyroCareX.Data.Healpers.ClinicalAIResponse;
+using ThyroCareX.Core.Dto;
 using ThyroCareX.Service.Abstarct;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
@@ -167,6 +168,41 @@ namespace ThyroCareX.Service.Impelemanation
             var result = await response.Content.ReadFromJsonAsync<UltrasoundValidationResponse>();
 
             return result?.IsUltrasound == true;
+        }
+        public async Task<ChatAIResponse> ChatAsync(string query, string sessionId, string chatHistory, string? imagePath = null)
+        {
+            using var form = new MultipartFormDataContent();
+            form.Add(new StringContent(query ?? ""), "query");
+            form.Add(new StringContent(sessionId ?? "string"), "session_id");
+            form.Add(new StringContent(chatHistory ?? "[]"), "chat_history");
+
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                var fullPath = Path.Combine(_env.WebRootPath ?? "wwwroot", imagePath.TrimStart('/'));
+                if (File.Exists(fullPath))
+                {
+                    var fileBytes = await File.ReadAllBytesAsync(fullPath);
+                    var byteContent = new ByteArrayContent(fileBytes);
+                    var extension = Path.GetExtension(fullPath).ToLower();
+                    byteContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(
+                        extension == ".png" ? "image/png" : "image/jpeg"
+                    );
+                    form.Add(byteContent, "image", Path.GetFileName(fullPath));
+                }
+            }
+
+            var response = await _httpClient.PostAsync(
+                "https://amer003100-thyraxcdss.hf.space/agent/chat",
+                form
+            );
+
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorBody = await response.Content.ReadAsStringAsync();
+                throw new HttpRequestException($"AI Agent Chat Error ({response.StatusCode}): {errorBody}");
+            }
+
+            return await response.Content.ReadFromJsonAsync<ChatAIResponse>();
         }
 
         private static string? TryGetString(JsonElement element, string propertyName)
