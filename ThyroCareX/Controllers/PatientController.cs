@@ -80,5 +80,19 @@ namespace ThyroCareX.Controllers
             var Response = await Mediator.Send(command);
             return Ok(Response);
         }
+
+        /// <summary>
+        /// Deletes a patient and all their associated medical data from the system.
+        /// </summary>
+        /// <param name="Id">ID of the patient to remove.</param>
+        /// <returns>Success message upon deletion.</returns>
+        [HttpDelete("DeletePatient/{Id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> DeletePatient([FromRoute] int Id)
+        {
+            var Response = await Mediator.Send(new DeletePatientCommand(Id));
+            return Ok(Response);
+        }
     }
 }

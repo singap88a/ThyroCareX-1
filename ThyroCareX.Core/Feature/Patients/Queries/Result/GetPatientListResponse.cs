@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,5 +18,11 @@ namespace ThyroCareX.Core.Feature.Patients.Queries.Result
         public string Address { get; set; }
         public DateTime RegistrationAt { get; set; } = DateTime.UtcNow;
         public int? DoctorID { get; set; }
+
+        // Diagnostic Summary
+        public string LatestStatus { get; set; } // e.g., Normal, Hyperthyroid
+        public string CancerClassification { get; set; } // Malignant, Benign, or Null
+        public string NextStep { get; set; } // upload_ultrasound or Consult
+        public double? RiskConfidence { get; set; }
     }
 }

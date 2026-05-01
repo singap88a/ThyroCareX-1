@@ -14,5 +14,11 @@ namespace ThyroCareX.Core.Feature.Patients.Queries.Result
         public int Age { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
+
+        // Diagnostic Summary
+        public string LatestStatus { get; set; }
+        public string CancerClassification { get; set; }
+        public string NextStep { get; set; }
+        public double? RiskConfidence { get; set; }
     }
 }
