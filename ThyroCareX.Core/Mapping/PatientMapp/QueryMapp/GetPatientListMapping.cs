@@ -29,7 +29,8 @@ namespace ThyroCareX.Core.Mapping.PatientMapp
                 .ForMember(dest => dest.NextStep, opt => opt.MapFrom(src => 
                     src.Tests.OrderByDescending(t => t.Id).Where(t => t.DiagnosisResult != null).Select(t => t.DiagnosisResult.NextStep).FirstOrDefault()))
                 .ForMember(dest => dest.RiskConfidence, opt => opt.MapFrom(src => 
-                    src.Tests.OrderByDescending(t => t.Id).Where(t => t.DiagnosisResult != null).Select(t => t.DiagnosisResult.Confidence).FirstOrDefault()));
+                    src.Tests.OrderByDescending(t => t.Id).Where(t => t.DiagnosisResult != null).Select(t => t.DiagnosisResult.Confidence).FirstOrDefault()))
+                .ForMember(dest => dest.DoctorName, opt => opt.MapFrom(src => src.Doctor != null ? src.Doctor.FullName : "N/A"));
         }
     }
 }

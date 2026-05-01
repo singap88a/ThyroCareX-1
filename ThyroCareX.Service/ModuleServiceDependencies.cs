@@ -25,7 +25,8 @@ namespace ThyroCareX.Service
             services.AddHttpClient<IAIService, AIService>();
 
             services.AddScoped<IImageService,ImageService>();
-            
+            services.AddScoped<IDashboardService, DashboardService>();
+            services.AddScoped<IContactService, ContactService>();
             
             return services;
         }

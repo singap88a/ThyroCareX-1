@@ -27,5 +27,18 @@ namespace ThyroCareX.Core.Feature.Patients.Queries.Result
         public string CurrentMedications { get; set; } = string.Empty;
         public string KnownAllergies { get; set; } = string.Empty;
         public string? AttachmentPath { get; set; }
+        public List<PatientTestDto> Tests { get; set; } = new();
+    }
+
+    public class PatientTestDto
+    {
+        public int TestId { get; set; }
+        public string? ImagePath { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public string? DiagnosisResult { get; set; }
+        public double? Confidence { get; set; }
+        public string? Classification { get; set; }
+        public string? BethesdaLabel { get; set; }
+        public string? NextStep { get; set; }
     }
 }

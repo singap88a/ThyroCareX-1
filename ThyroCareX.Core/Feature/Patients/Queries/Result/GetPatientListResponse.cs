@@ -18,6 +18,7 @@ namespace ThyroCareX.Core.Feature.Patients.Queries.Result
         public string Address { get; set; }
         public DateTime RegistrationAt { get; set; } = DateTime.UtcNow;
         public int? DoctorID { get; set; }
+        public string DoctorName { get; set; }
 
         // Diagnostic Summary
         public string LatestStatus { get; set; } // e.g., Normal, Hyperthyroid
