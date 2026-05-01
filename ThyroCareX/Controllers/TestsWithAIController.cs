@@ -65,5 +65,18 @@ namespace ThyroCareX.Controllers
             var response = await Mediator.Send(new GetPatientTestHistoryQuery(patientId));
             return Ok(response);
         }
+
+        /// <summary>
+        /// Validates if the uploaded image is a medical ultrasound.
+        /// </summary>
+        /// <param name="command">Command containing the image file.</param>
+        /// <returns>Validation result (true if valid ultrasound).</returns>
+        [HttpPost("ValidateImage")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> ValidateImage([FromForm] ValidateImageCommand command)
+        {
+            var response = await Mediator.Send(command);
+            return Ok(response);
+        }
     }
 }
