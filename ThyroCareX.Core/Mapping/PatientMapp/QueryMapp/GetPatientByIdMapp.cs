@@ -28,7 +28,22 @@ namespace ThyroCareX.Core.Mapping.PatientMapp
                     Confidence = t.DiagnosisResult != null ? t.DiagnosisResult.Confidence : null,
                     Classification = t.DiagnosisResult != null ? t.DiagnosisResult.ClassificationLabel : null,
                     BethesdaLabel = t.DiagnosisResult != null ? t.DiagnosisResult.BethesdaLabel : null,
-                    NextStep = t.DiagnosisResult != null ? t.DiagnosisResult.NextStep : null
+                    NextStep = t.DiagnosisResult != null ? t.DiagnosisResult.NextStep : null,
+                    TSH = t.TSH,
+                    T3 = t.T3,
+                    TT4 = t.TT4,
+                    FTI = t.FTI,
+                    T4U = t.T4U,
+                    NodulePresent = t.NodulePresent,
+                    OnThyroxine = t.OnThyroxine,
+                    ThyroidSurgery = t.ThyroidSurgery,
+                    QueryHyperthyroid = t.QueryHyperthyroid,
+                    TiradsStage = t.DiagnosisResult != null ? t.DiagnosisResult.TiradsStage : null,
+                    ClinicalRecommendation = t.DiagnosisResult != null ? t.DiagnosisResult.ClinicalRecommendation : null,
+                    RiskLevel = t.DiagnosisResult != null ? t.DiagnosisResult.RiskLevel : null,
+                    OverlayImageUrl = t.DiagnosisResult != null ? t.DiagnosisResult.OverlayImageUrl : null,
+                    MaskImageUrl = t.DiagnosisResult != null ? t.DiagnosisResult.MaskImageUrl : null,
+                    RoiImageUrl = t.DiagnosisResult != null ? t.DiagnosisResult.RoiImageUrl : null
                 })));
         }
     }

@@ -40,5 +40,26 @@ namespace ThyroCareX.Core.Feature.Patients.Queries.Result
         public string? Classification { get; set; }
         public string? BethesdaLabel { get; set; }
         public string? NextStep { get; set; }
+
+        // 🧪 Lab Data
+        public double? TSH { get; set; }
+        public double? T3 { get; set; }
+        public double? TT4 { get; set; }
+        public double? FTI { get; set; }
+        public double? T4U { get; set; }
+
+        // Clinical Info
+        public bool NodulePresent { get; set; }
+        public int OnThyroxine { get; set; }
+        public int ThyroidSurgery { get; set; }
+        public int QueryHyperthyroid { get; set; }
+
+        // Extra AI fields
+        public string? TiradsStage { get; set; }
+        public string? ClinicalRecommendation { get; set; }
+        public string? RiskLevel { get; set; }
+        public string? OverlayImageUrl { get; set; }
+        public string? MaskImageUrl { get; set; }
+        public string? RoiImageUrl { get; set; }
     }
 }
